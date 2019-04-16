@@ -1,0 +1,1405 @@
+TimeQuest Timing Analyzer report for v1495usr_demo
+Tue Apr 18 14:10:55 2017
+Quartus II Version 10.1 Build 197 01/19/2011 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'LCLK'
+ 12. Hold: 'LCLK'
+ 13. Recovery: 'LCLK'
+ 14. Removal: 'LCLK'
+ 15. Minimum Pulse Width: 'LCLK'
+ 16. Setup Times
+ 17. Hold Times
+ 18. Clock to Output Times
+ 19. Minimum Clock to Output Times
+ 20. Propagation Delay
+ 21. Minimum Propagation Delay
+ 22. Setup Transfers
+ 23. Hold Transfers
+ 24. Recovery Transfers
+ 25. Removal Transfers
+ 26. Report TCCS
+ 27. Report RSKM
+ 28. Unconstrained Paths
+ 29. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                    ;
++--------------------+-----------------------------------------------------------------+
+; Quartus II Version ; Version 10.1 Build 197 01/19/2011 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; v1495usr_demo                                                   ;
+; Device Family      ; Cyclone                                                         ;
+; Device Name        ; EP1C20F400C6                                                    ;
+; Timing Models      ; Final                                                           ;
+; Delay Model        ; Slow Model                                                      ;
+; Rise/Fall Delays   ; Unavailable                                                     ;
++--------------------+-----------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                           ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets  ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+; LCLK       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { LCLK } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 177.15 MHz ; 177.15 MHz      ; LCLK       ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Setup Summary                  ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; LCLK  ; -4.645 ; -294.805      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; LCLK  ; 0.633 ; 0.000         ;
++-------+-------+---------------+
+
+
++--------------------------------+
+; Recovery Summary               ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; LCLK  ; -1.159 ; -4.245        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Removal Summary               ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; LCLK  ; 1.918 ; 0.000         ;
++-------+-------+---------------+
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; LCLK  ; -1.155 ; -158.231      ;
++-------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'LCLK'                                                                                                                                                                                          ;
++--------+------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                  ; To Node                                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -4.645 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[31]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.616      ;
+; -4.641 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[31]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.612      ;
+; -4.585 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[27]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.556      ;
+; -4.585 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[28]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.556      ;
+; -4.585 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[29]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.556      ;
+; -4.585 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[30]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.556      ;
+; -4.585 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[26]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.556      ;
+; -4.581 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[27]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.552      ;
+; -4.581 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[28]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.552      ;
+; -4.581 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[29]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.552      ;
+; -4.581 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[30]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.552      ;
+; -4.581 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[26]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.552      ;
+; -4.513 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[31]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.484      ;
+; -4.495 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[14]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[31]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.466      ;
+; -4.474 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[31]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.445      ;
+; -4.453 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[27]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.424      ;
+; -4.453 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[28]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.424      ;
+; -4.453 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[29]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.424      ;
+; -4.453 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[30]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.424      ;
+; -4.453 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[26]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.424      ;
+; -4.435 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[14]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[27]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.406      ;
+; -4.435 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[14]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[28]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.406      ;
+; -4.435 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[14]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[29]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.406      ;
+; -4.435 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[14]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[30]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.406      ;
+; -4.435 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[14]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[26]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.406      ;
+; -4.414 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[27]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.385      ;
+; -4.414 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[28]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.385      ;
+; -4.414 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[29]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.385      ;
+; -4.414 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[30]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.385      ;
+; -4.414 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[26]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.385      ;
+; -4.380 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[25]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.351      ;
+; -4.380 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[21]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.351      ;
+; -4.380 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[22]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.351      ;
+; -4.380 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[23]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.351      ;
+; -4.380 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[24]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.351      ;
+; -4.376 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[25]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.347      ;
+; -4.376 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[21]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.347      ;
+; -4.376 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[22]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.347      ;
+; -4.376 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[23]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.347      ;
+; -4.376 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[24]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.347      ;
+; -4.363 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[10]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[31]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.334      ;
+; -4.349 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[9]  ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[14] ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.320      ;
+; -4.349 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[9]  ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[5]  ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.320      ;
+; -4.320 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.291      ;
+; -4.320 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.291      ;
+; -4.320 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[19]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.291      ;
+; -4.320 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[18]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.291      ;
+; -4.320 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[20]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.291      ;
+; -4.316 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.287      ;
+; -4.316 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.287      ;
+; -4.316 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[19]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.287      ;
+; -4.316 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[18]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.287      ;
+; -4.316 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[20]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.287      ;
+; -4.303 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[10]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[27]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.274      ;
+; -4.303 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[10]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[28]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.274      ;
+; -4.303 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[10]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[29]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.274      ;
+; -4.303 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[10]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[30]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.274      ;
+; -4.303 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[10]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[26]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.274      ;
+; -4.287 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[11]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[31]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.258      ;
+; -4.281 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[11] ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[14] ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.252      ;
+; -4.281 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[11] ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[5]  ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.252      ;
+; -4.267 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[9]  ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[12] ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.238      ;
+; -4.266 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[9]  ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[11] ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.237      ;
+; -4.262 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[9]  ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[15] ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.233      ;
+; -4.251 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[7]  ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[14] ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.222      ;
+; -4.251 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[7]  ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[5]  ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.222      ;
+; -4.248 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[25]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.219      ;
+; -4.248 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[21]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.219      ;
+; -4.248 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[22]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.219      ;
+; -4.248 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[23]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.219      ;
+; -4.248 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[24]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.219      ;
+; -4.230 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[14]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[25]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.201      ;
+; -4.230 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[14]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[21]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.201      ;
+; -4.230 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[14]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[22]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.201      ;
+; -4.230 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[14]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[23]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.201      ;
+; -4.230 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[14]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[24]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.201      ;
+; -4.229 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[9]  ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[8]  ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.200      ;
+; -4.227 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[11]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[27]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.198      ;
+; -4.227 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[11]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[28]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.198      ;
+; -4.227 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[11]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[29]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.198      ;
+; -4.227 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[11]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[30]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.198      ;
+; -4.227 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[11]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[26]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.198      ;
+; -4.225 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[9]  ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[2]  ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.196      ;
+; -4.222 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[13] ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[12] ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.193      ;
+; -4.221 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[13] ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[11] ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.192      ;
+; -4.217 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[13] ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[15] ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.188      ;
+; -4.216 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[9]  ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[0]  ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.187      ;
+; -4.209 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[25]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.180      ;
+; -4.209 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[21]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.180      ;
+; -4.209 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[22]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.180      ;
+; -4.209 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[23]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.180      ;
+; -4.209 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[24]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.180      ;
+; -4.201 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[9]  ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[10] ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.172      ;
+; -4.190 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[5]  ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[12] ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.161      ;
+; -4.189 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[5]  ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[11] ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.160      ;
+; -4.188 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.159      ;
+; -4.188 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.159      ;
+; -4.188 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[19]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.159      ;
+; -4.188 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[18]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.159      ;
+; -4.188 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[20]    ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 5.159      ;
++--------+------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'LCLK'                                                                                                                                                                                               ;
++-------+------------------------------------------------------------+-----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                  ; To Node                                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------------+-----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.633 ; v1495usr_hal:I1|led_if:I8|nLEDG                            ; v1495usr_hal:I1|led_if:I8|nLEDG                                 ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 0.645      ;
+; 0.633 ; v1495usr_hal:I1|led_if:I8|nLEDR                            ; v1495usr_hal:I1|led_if:I8|nLEDR                                 ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 0.645      ;
+; 0.633 ; v1495usr_hal:I1|led_if:I8|TMONOSG                          ; v1495usr_hal:I1|led_if:I8|TMONOSG                               ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 0.645      ;
+; 0.633 ; v1495usr_hal:I1|led_if:I8|TMONOSR                          ; v1495usr_hal:I1|led_if:I8|TMONOSR                               ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 0.645      ;
+; 0.663 ; MainLogicUser:I0|EncodingComponent:BUSY_encoding|SignalD1  ; MainLogicUser:I0|EncodingComponent:BUSY_encoding|SignalD2       ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 0.675      ;
+; 0.670 ; MainLogicUser:I0|EncodingComponent:HEV_encoding|SignalD1   ; MainLogicUser:I0|EncodingComponent:HEV_encoding|SignalD2        ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 0.682      ;
+; 0.811 ; MainLogicUser:I0|EncodingComponent:HEV_encoding|SignalD2   ; MainLogicUser:I0|EncodingComponent:HEV_encoding|SignalOUTstart  ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 0.823      ;
+; 0.812 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[31]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[31]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 0.824      ;
+; 0.814 ; MainLogicUser:I0|EncodingComponent:HEV_encoding|SignalD2   ; MainLogicUser:I0|EncodingComponent:HEV_encoding|SignalOUTstop   ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 0.826      ;
+; 0.814 ; MainLogicUser:I0|EncodingComponent:BUSY_encoding|SignalD2  ; MainLogicUser:I0|EncodingComponent:BUSY_encoding|SignalOUTstart ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 0.826      ;
+; 0.815 ; MainLogicUser:I0|EncodingComponent:BUSY_encoding|SignalD2  ; MainLogicUser:I0|EncodingComponent:BUSY_encoding|SignalOUTstop  ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 0.827      ;
+; 0.972 ; v1495usr_hal:I1|localbusif:I1|LBSTATE[0]                   ; v1495usr_hal:I1|localbusif:I1|RDEN_s                            ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 0.984      ;
+; 1.011 ; v1495usr_hal:I1|led_if:I8|TCNT3[4]                         ; v1495usr_hal:I1|led_if:I8|TCNT3[4]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.023      ;
+; 1.012 ; MainLogicUser:I0|LEDstatus:check_LED_status|LEDmode        ; MainLogicUser:I0|VetoOUT                                        ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.024      ;
+; 1.012 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[4]     ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[4]          ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.024      ;
+; 1.016 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[1]     ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[1]          ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.028      ;
+; 1.018 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[24]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[24]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.030      ;
+; 1.018 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[10]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[10]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.030      ;
+; 1.018 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[14]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[14]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.030      ;
+; 1.018 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[20]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[20]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.030      ;
+; 1.019 ; v1495usr_hal:I1|led_if:I8|TICK[2]                          ; v1495usr_hal:I1|led_if:I8|nLEDG                                 ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.031      ;
+; 1.020 ; v1495usr_hal:I1|led_if:I8|TCNT3[0]                         ; v1495usr_hal:I1|led_if:I8|TCNT3[0]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.032      ;
+; 1.020 ; v1495usr_hal:I1|led_if:I8|TCNT3[5]                         ; v1495usr_hal:I1|led_if:I8|TCNT3[5]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.032      ;
+; 1.020 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[21]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[21]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.032      ;
+; 1.020 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[11]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[11]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.032      ;
+; 1.020 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.032      ;
+; 1.020 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[6]     ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[6]          ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.032      ;
+; 1.021 ; v1495usr_hal:I1|localbusif:I1|LBSTATE[1]                   ; v1495usr_hal:I1|localbusif:I1|LBSTATE[1]                        ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.033      ;
+; 1.022 ; v1495usr_hal:I1|led_if:I8|TCNT1[2]                         ; v1495usr_hal:I1|led_if:I8|TCNT1[2]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.034      ;
+; 1.023 ; v1495usr_hal:I1|led_if:I8|TCNT3[3]                         ; v1495usr_hal:I1|led_if:I8|TCNT3[3]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.035      ;
+; 1.023 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[9]     ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[9]          ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.035      ;
+; 1.023 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[19]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[19]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.035      ;
+; 1.026 ; v1495usr_hal:I1|led_if:I8|TCNT2[4]                         ; v1495usr_hal:I1|led_if:I8|TCNT2[4]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.038      ;
+; 1.027 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[30]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[30]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.039      ;
+; 1.029 ; v1495usr_hal:I1|led_if:I8|TCNT1[3]                         ; v1495usr_hal:I1|led_if:I8|TCNT1[3]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.041      ;
+; 1.030 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[26]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[26]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.042      ;
+; 1.030 ; v1495usr_hal:I1|led_if:I8|TCNT1[1]                         ; v1495usr_hal:I1|led_if:I8|TCNT1[1]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.042      ;
+; 1.035 ; v1495usr_hal:I1|led_if:I8|TCNT2[5]                         ; v1495usr_hal:I1|led_if:I8|TCNT2[5]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.047      ;
+; 1.035 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[29]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[29]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.047      ;
+; 1.037 ; v1495usr_hal:I1|led_if:I8|TCNT2[0]                         ; v1495usr_hal:I1|led_if:I8|TCNT2[0]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.049      ;
+; 1.040 ; v1495usr_hal:I1|led_if:I8|TCNT2[3]                         ; v1495usr_hal:I1|led_if:I8|TCNT2[3]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.052      ;
+; 1.041 ; v1495usr_hal:I1|localbusif:I1|LBSTATE[0]                   ; v1495usr_hal:I1|localbusif:I1|nREADY_s_i                        ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.053      ;
+; 1.041 ; v1495usr_hal:I1|localbusif:I1|LBSTATE[0]                   ; v1495usr_hal:I1|localbusif:I1|LBSTATE[0]                        ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.053      ;
+; 1.042 ; v1495usr_hal:I1|localbusif:I1|LBSTATE[0]                   ; v1495usr_hal:I1|localbusif:I1|LBSTATE[1]                        ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.054      ;
+; 1.131 ; v1495usr_hal:I1|led_if:I8|TCNT1[4]                         ; v1495usr_hal:I1|led_if:I8|TCNT1[4]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.143      ;
+; 1.131 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[27]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[27]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.143      ;
+; 1.135 ; v1495usr_hal:I1|led_if:I8|TCNT3[7]                         ; v1495usr_hal:I1|led_if:I8|TCNT3[7]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.147      ;
+; 1.135 ; v1495usr_hal:I1|led_if:I8|TCNT3[2]                         ; v1495usr_hal:I1|led_if:I8|TCNT3[2]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.147      ;
+; 1.135 ; v1495usr_hal:I1|led_if:I8|TCNT3[6]                         ; v1495usr_hal:I1|led_if:I8|TCNT3[6]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.147      ;
+; 1.135 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[22]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[22]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.147      ;
+; 1.135 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.147      ;
+; 1.135 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[2]     ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[2]          ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.147      ;
+; 1.136 ; v1495usr_hal:I1|led_if:I8|TCNT3[1]                         ; v1495usr_hal:I1|led_if:I8|TCNT3[1]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.148      ;
+; 1.136 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.148      ;
+; 1.136 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[7]     ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[7]          ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.148      ;
+; 1.139 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[18]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[18]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.151      ;
+; 1.139 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[3]     ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[3]          ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.151      ;
+; 1.139 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[5]     ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[5]          ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.151      ;
+; 1.139 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[8]     ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[8]          ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.151      ;
+; 1.140 ; v1495usr_hal:I1|led_if:I8|TCNT1[5]                         ; v1495usr_hal:I1|led_if:I8|TCNT1[5]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.152      ;
+; 1.140 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[25]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[25]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.152      ;
+; 1.140 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[23]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[23]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.152      ;
+; 1.140 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[13]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[13]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.152      ;
+; 1.140 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.152      ;
+; 1.143 ; v1495usr_hal:I1|led_if:I8|TCNT2[2]                         ; v1495usr_hal:I1|led_if:I8|TCNT2[2]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.155      ;
+; 1.143 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[28]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[28]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.155      ;
+; 1.144 ; v1495usr_hal:I1|led_if:I8|TCNT1[0]                         ; v1495usr_hal:I1|led_if:I8|TCNT1[0]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.156      ;
+; 1.147 ; v1495usr_hal:I1|localbusif:I1|LBSTATE[1]                   ; v1495usr_hal:I1|localbusif:I1|nREADY_s_i                        ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.159      ;
+; 1.148 ; v1495usr_hal:I1|localbusif:I1|LBSTATE[1]                   ; v1495usr_hal:I1|localbusif:I1|LBSTATE[0]                        ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.160      ;
+; 1.148 ; v1495usr_hal:I1|led_if:I8|TCNT2[1]                         ; v1495usr_hal:I1|led_if:I8|TCNT2[1]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.160      ;
+; 1.149 ; v1495usr_hal:I1|led_if:I8|TCNT2[6]                         ; v1495usr_hal:I1|led_if:I8|TCNT2[6]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.161      ;
+; 1.189 ; v1495usr_hal:I1|led_if:I8|TCNT1[5]                         ; v1495usr_hal:I1|led_if:I8|TICK[0]                               ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.201      ;
+; 1.248 ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[23] ; MainLogicUser:I0|BusyLogicComponent:busy_logic|BusyOUT          ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.260      ;
+; 1.265 ; v1495usr_hal:I1|led_if:I8|TCNT2[7]                         ; v1495usr_hal:I1|led_if:I8|TCNT2[7]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.277      ;
+; 1.279 ; v1495usr_hal:I1|led_if:I8|TMONOSR                          ; v1495usr_hal:I1|led_if:I8|nLEDR                                 ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.291      ;
+; 1.280 ; v1495usr_hal:I1|led_if:I8|TMONOSG                          ; v1495usr_hal:I1|led_if:I8|nLEDG                                 ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.292      ;
+; 1.294 ; v1495usr_hal:I1|led_if:I8|TICK[2]                          ; v1495usr_hal:I1|led_if:I8|TMONOSG                               ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.306      ;
+; 1.297 ; v1495usr_hal:I1|led_if:I8|TICK[2]                          ; v1495usr_hal:I1|led_if:I8|TMONOSR                               ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.309      ;
+; 1.319 ; v1495usr_hal:I1|led_if:I8|TCNT1[4]                         ; v1495usr_hal:I1|led_if:I8|TICK[0]                               ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.331      ;
+; 1.439 ; v1495usr_hal:I1|led_if:I8|TCNT1[3]                         ; v1495usr_hal:I1|led_if:I8|TICK[0]                               ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.451      ;
+; 1.440 ; v1495usr_hal:I1|led_if:I8|TCNT1[5]                         ; v1495usr_hal:I1|led_if:I8|TICK[1]                               ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.452      ;
+; 1.474 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[4]     ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[5]          ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.486      ;
+; 1.478 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[1]     ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[2]          ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.490      ;
+; 1.480 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[24]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[25]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.492      ;
+; 1.480 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[14]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.492      ;
+; 1.482 ; v1495usr_hal:I1|led_if:I8|TCNT3[0]                         ; v1495usr_hal:I1|led_if:I8|TCNT3[1]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.494      ;
+; 1.482 ; v1495usr_hal:I1|led_if:I8|TCNT3[5]                         ; v1495usr_hal:I1|led_if:I8|TCNT3[6]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.494      ;
+; 1.482 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[21]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[22]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.494      ;
+; 1.482 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[11]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.494      ;
+; 1.482 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.494      ;
+; 1.482 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[6]     ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[7]          ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.494      ;
+; 1.485 ; v1495usr_hal:I1|led_if:I8|TCNT3[3]                         ; v1495usr_hal:I1|led_if:I8|TCNT3[4]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.497      ;
+; 1.485 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[9]     ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[10]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.497      ;
+; 1.485 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[19]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[20]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.497      ;
+; 1.491 ; v1495usr_hal:I1|led_if:I8|TCNT1[3]                         ; v1495usr_hal:I1|led_if:I8|TCNT1[4]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.503      ;
+; 1.492 ; v1495usr_hal:I1|led_if:I8|TCNT1[1]                         ; v1495usr_hal:I1|led_if:I8|TCNT1[2]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.504      ;
+; 1.492 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[26]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[27]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.504      ;
+; 1.497 ; v1495usr_hal:I1|led_if:I8|TCNT2[5]                         ; v1495usr_hal:I1|led_if:I8|TCNT2[6]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.509      ;
+; 1.497 ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[29]    ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[30]         ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.509      ;
+; 1.499 ; v1495usr_hal:I1|led_if:I8|TCNT2[0]                         ; v1495usr_hal:I1|led_if:I8|TCNT2[1]                              ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.511      ;
++-------+------------------------------------------------------------+-----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'LCLK'                                                                                                                              ;
++--------+----------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                  ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.159 ; MainLogicUser:I0|red_led   ; v1495usr_hal:I1|led_if:I8|nLEDR   ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 2.130      ;
+; -1.065 ; MainLogicUser:I0|green_led ; v1495usr_hal:I1|led_if:I8|TMONOSG ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 2.036      ;
+; -1.062 ; MainLogicUser:I0|red_led   ; v1495usr_hal:I1|led_if:I8|TMONOSR ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 2.033      ;
+; -0.959 ; MainLogicUser:I0|green_led ; v1495usr_hal:I1|led_if:I8|nLEDG   ; LCLK         ; LCLK        ; 1.000        ; 0.000      ; 1.930      ;
++--------+----------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'LCLK'                                                                                                                              ;
++-------+----------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                  ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.918 ; MainLogicUser:I0|green_led ; v1495usr_hal:I1|led_if:I8|nLEDG   ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 1.930      ;
+; 2.021 ; MainLogicUser:I0|red_led   ; v1495usr_hal:I1|led_if:I8|TMONOSR ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 2.033      ;
+; 2.024 ; MainLogicUser:I0|green_led ; v1495usr_hal:I1|led_if:I8|TMONOSG ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 2.036      ;
+; 2.118 ; MainLogicUser:I0|red_led   ; v1495usr_hal:I1|led_if:I8|nLEDR   ; LCLK         ; LCLK        ; 0.000        ; 0.000      ; 2.130      ;
++-------+----------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'LCLK'                                                                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                          ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------+
+; -1.155 ; 1.000        ; 2.155          ; Port Rate        ; LCLK  ; Rise       ; LCLK                                                            ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|BusyOUT          ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|BusyOUT          ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|busyinput        ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|busyinput        ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[0]       ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[0]       ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[10]      ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[10]      ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[11]      ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[11]      ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[12]      ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[12]      ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[13]      ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[13]      ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[14]      ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[14]      ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[15]      ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[15]      ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[16]      ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[16]      ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[17]      ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[17]      ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[18]      ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[18]      ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[19]      ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[19]      ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[1]       ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[1]       ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[20]      ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[20]      ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[21]      ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[21]      ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[22]      ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[22]      ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[23]      ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[23]      ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[24]      ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[24]      ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[25]      ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[25]      ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[26]      ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[26]      ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[2]       ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[2]       ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[3]       ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[3]       ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[4]       ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[4]       ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[5]       ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[5]       ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[6]       ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[6]       ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[7]       ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[7]       ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[8]       ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[8]       ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[9]       ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|BusyLogicComponent:busy_logic|counter[9]       ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|EncodingComponent:BUSY_encoding|SignalD1       ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|EncodingComponent:BUSY_encoding|SignalD1       ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|EncodingComponent:BUSY_encoding|SignalD2       ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|EncodingComponent:BUSY_encoding|SignalD2       ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|EncodingComponent:BUSY_encoding|SignalOUTstart ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|EncodingComponent:BUSY_encoding|SignalOUTstart ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|EncodingComponent:BUSY_encoding|SignalOUTstop  ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|EncodingComponent:BUSY_encoding|SignalOUTstop  ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|EncodingComponent:HEV_encoding|SignalD1        ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|EncodingComponent:HEV_encoding|SignalD1        ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|EncodingComponent:HEV_encoding|SignalD2        ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|EncodingComponent:HEV_encoding|SignalD2        ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|EncodingComponent:HEV_encoding|SignalOUTstart  ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|EncodingComponent:HEV_encoding|SignalOUTstart  ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|EncodingComponent:HEV_encoding|SignalOUTstop   ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|EncodingComponent:HEV_encoding|SignalOUTstop   ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|LEDmode             ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|LEDmode             ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[0]          ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[0]          ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[10]         ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[10]         ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[11]         ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[11]         ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]         ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[12]         ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[13]         ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[13]         ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[14]         ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[14]         ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]         ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[15]         ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]         ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[16]         ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]         ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[17]         ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[18]         ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[18]         ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[19]         ;
+; -0.734 ; 0.500        ; 1.234          ; Low Pulse Width  ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[19]         ;
+; -0.734 ; 0.500        ; 1.234          ; High Pulse Width ; LCLK  ; Rise       ; MainLogicUser:I0|LEDstatus:check_LED_status|counter[1]          ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; A[*]      ; LCLK       ; 11.324 ; 11.324 ; Rise       ; LCLK            ;
+;  A[0]     ; LCLK       ; 10.181 ; 10.181 ; Rise       ; LCLK            ;
+;  A[1]     ; LCLK       ; 9.649  ; 9.649  ; Rise       ; LCLK            ;
+;  A[2]     ; LCLK       ; 9.811  ; 9.811  ; Rise       ; LCLK            ;
+;  A[3]     ; LCLK       ; 9.960  ; 9.960  ; Rise       ; LCLK            ;
+;  A[4]     ; LCLK       ; 9.298  ; 9.298  ; Rise       ; LCLK            ;
+;  A[5]     ; LCLK       ; 11.027 ; 11.027 ; Rise       ; LCLK            ;
+;  A[6]     ; LCLK       ; 9.536  ; 9.536  ; Rise       ; LCLK            ;
+;  A[7]     ; LCLK       ; 10.555 ; 10.555 ; Rise       ; LCLK            ;
+;  A[8]     ; LCLK       ; 10.266 ; 10.266 ; Rise       ; LCLK            ;
+;  A[9]     ; LCLK       ; 9.049  ; 9.049  ; Rise       ; LCLK            ;
+;  A[10]    ; LCLK       ; 11.324 ; 11.324 ; Rise       ; LCLK            ;
+;  A[11]    ; LCLK       ; 10.021 ; 10.021 ; Rise       ; LCLK            ;
+;  A[12]    ; LCLK       ; 9.249  ; 9.249  ; Rise       ; LCLK            ;
+;  A[13]    ; LCLK       ; 9.438  ; 9.438  ; Rise       ; LCLK            ;
+;  A[14]    ; LCLK       ; 9.306  ; 9.306  ; Rise       ; LCLK            ;
+;  A[15]    ; LCLK       ; 8.127  ; 8.127  ; Rise       ; LCLK            ;
+;  A[16]    ; LCLK       ; 8.973  ; 8.973  ; Rise       ; LCLK            ;
+;  A[17]    ; LCLK       ; 8.609  ; 8.609  ; Rise       ; LCLK            ;
+;  A[18]    ; LCLK       ; 9.691  ; 9.691  ; Rise       ; LCLK            ;
+;  A[19]    ; LCLK       ; 9.479  ; 9.479  ; Rise       ; LCLK            ;
+;  A[20]    ; LCLK       ; 8.457  ; 8.457  ; Rise       ; LCLK            ;
+;  A[21]    ; LCLK       ; 9.285  ; 9.285  ; Rise       ; LCLK            ;
+;  A[22]    ; LCLK       ; 8.225  ; 8.225  ; Rise       ; LCLK            ;
+;  A[23]    ; LCLK       ; 9.341  ; 9.341  ; Rise       ; LCLK            ;
+;  A[24]    ; LCLK       ; 8.803  ; 8.803  ; Rise       ; LCLK            ;
+;  A[25]    ; LCLK       ; 10.175 ; 10.175 ; Rise       ; LCLK            ;
+;  A[26]    ; LCLK       ; 8.741  ; 8.741  ; Rise       ; LCLK            ;
+;  A[27]    ; LCLK       ; 9.945  ; 9.945  ; Rise       ; LCLK            ;
+;  A[28]    ; LCLK       ; 8.046  ; 8.046  ; Rise       ; LCLK            ;
+;  A[29]    ; LCLK       ; 9.638  ; 9.638  ; Rise       ; LCLK            ;
+;  A[30]    ; LCLK       ; 9.783  ; 9.783  ; Rise       ; LCLK            ;
+;  A[31]    ; LCLK       ; 10.119 ; 10.119 ; Rise       ; LCLK            ;
+; GIN[*]    ; LCLK       ; 8.694  ; 8.694  ; Rise       ; LCLK            ;
+;  GIN[0]   ; LCLK       ; 2.564  ; 2.564  ; Rise       ; LCLK            ;
+;  GIN[1]   ; LCLK       ; 8.694  ; 8.694  ; Rise       ; LCLK            ;
+; WnR       ; LCLK       ; 4.540  ; 4.540  ; Rise       ; LCLK            ;
+; nADS      ; LCLK       ; 4.645  ; 4.645  ; Rise       ; LCLK            ;
+; nBLAST    ; LCLK       ; 6.019  ; 6.019  ; Rise       ; LCLK            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; A[*]      ; LCLK       ; -4.190 ; -4.190 ; Rise       ; LCLK            ;
+;  A[0]     ; LCLK       ; -6.325 ; -6.325 ; Rise       ; LCLK            ;
+;  A[1]     ; LCLK       ; -5.793 ; -5.793 ; Rise       ; LCLK            ;
+;  A[2]     ; LCLK       ; -5.955 ; -5.955 ; Rise       ; LCLK            ;
+;  A[3]     ; LCLK       ; -6.104 ; -6.104 ; Rise       ; LCLK            ;
+;  A[4]     ; LCLK       ; -5.442 ; -5.442 ; Rise       ; LCLK            ;
+;  A[5]     ; LCLK       ; -7.171 ; -7.171 ; Rise       ; LCLK            ;
+;  A[6]     ; LCLK       ; -5.680 ; -5.680 ; Rise       ; LCLK            ;
+;  A[7]     ; LCLK       ; -6.699 ; -6.699 ; Rise       ; LCLK            ;
+;  A[8]     ; LCLK       ; -6.410 ; -6.410 ; Rise       ; LCLK            ;
+;  A[9]     ; LCLK       ; -5.193 ; -5.193 ; Rise       ; LCLK            ;
+;  A[10]    ; LCLK       ; -7.468 ; -7.468 ; Rise       ; LCLK            ;
+;  A[11]    ; LCLK       ; -6.165 ; -6.165 ; Rise       ; LCLK            ;
+;  A[12]    ; LCLK       ; -5.393 ; -5.393 ; Rise       ; LCLK            ;
+;  A[13]    ; LCLK       ; -5.582 ; -5.582 ; Rise       ; LCLK            ;
+;  A[14]    ; LCLK       ; -5.450 ; -5.450 ; Rise       ; LCLK            ;
+;  A[15]    ; LCLK       ; -4.271 ; -4.271 ; Rise       ; LCLK            ;
+;  A[16]    ; LCLK       ; -5.117 ; -5.117 ; Rise       ; LCLK            ;
+;  A[17]    ; LCLK       ; -4.753 ; -4.753 ; Rise       ; LCLK            ;
+;  A[18]    ; LCLK       ; -5.835 ; -5.835 ; Rise       ; LCLK            ;
+;  A[19]    ; LCLK       ; -5.623 ; -5.623 ; Rise       ; LCLK            ;
+;  A[20]    ; LCLK       ; -4.601 ; -4.601 ; Rise       ; LCLK            ;
+;  A[21]    ; LCLK       ; -5.429 ; -5.429 ; Rise       ; LCLK            ;
+;  A[22]    ; LCLK       ; -4.369 ; -4.369 ; Rise       ; LCLK            ;
+;  A[23]    ; LCLK       ; -5.485 ; -5.485 ; Rise       ; LCLK            ;
+;  A[24]    ; LCLK       ; -4.947 ; -4.947 ; Rise       ; LCLK            ;
+;  A[25]    ; LCLK       ; -6.319 ; -6.319 ; Rise       ; LCLK            ;
+;  A[26]    ; LCLK       ; -4.885 ; -4.885 ; Rise       ; LCLK            ;
+;  A[27]    ; LCLK       ; -6.089 ; -6.089 ; Rise       ; LCLK            ;
+;  A[28]    ; LCLK       ; -4.190 ; -4.190 ; Rise       ; LCLK            ;
+;  A[29]    ; LCLK       ; -5.782 ; -5.782 ; Rise       ; LCLK            ;
+;  A[30]    ; LCLK       ; -5.927 ; -5.927 ; Rise       ; LCLK            ;
+;  A[31]    ; LCLK       ; -6.263 ; -6.263 ; Rise       ; LCLK            ;
+; GIN[*]    ; LCLK       ; -1.411 ; -1.411 ; Rise       ; LCLK            ;
+;  GIN[0]   ; LCLK       ; -1.411 ; -1.411 ; Rise       ; LCLK            ;
+;  GIN[1]   ; LCLK       ; -5.520 ; -5.520 ; Rise       ; LCLK            ;
+; WnR       ; LCLK       ; -3.733 ; -3.733 ; Rise       ; LCLK            ;
+; nADS      ; LCLK       ; -3.858 ; -3.858 ; Rise       ; LCLK            ;
+; nBLAST    ; LCLK       ; -5.641 ; -5.641 ; Rise       ; LCLK            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; F[*]      ; LCLK       ; 11.942 ; 11.942 ; Rise       ; LCLK            ;
+;  F[0]     ; LCLK       ; 6.419  ; 6.419  ; Rise       ; LCLK            ;
+;  F[1]     ; LCLK       ; 9.006  ; 9.006  ; Rise       ; LCLK            ;
+;  F[2]     ; LCLK       ; 11.942 ; 11.942 ; Rise       ; LCLK            ;
+;  F[3]     ; LCLK       ; 8.946  ; 8.946  ; Rise       ; LCLK            ;
+;  F[4]     ; LCLK       ; 8.808  ; 8.808  ; Rise       ; LCLK            ;
+;  F[5]     ; LCLK       ; 10.515 ; 10.515 ; Rise       ; LCLK            ;
+;  F[6]     ; LCLK       ; 9.310  ; 9.310  ; Rise       ; LCLK            ;
+;  F[12]    ; LCLK       ; 8.555  ; 8.555  ; Rise       ; LCLK            ;
+;  F[13]    ; LCLK       ; 10.187 ; 10.187 ; Rise       ; LCLK            ;
+;  F[16]    ; LCLK       ; 7.917  ; 7.917  ; Rise       ; LCLK            ;
+;  F[17]    ; LCLK       ; 10.006 ; 10.006 ; Rise       ; LCLK            ;
+;  F[28]    ; LCLK       ; 9.550  ; 9.550  ; Rise       ; LCLK            ;
+; LAD[*]    ; LCLK       ; 11.595 ; 11.595 ; Rise       ; LCLK            ;
+;  LAD[0]   ; LCLK       ; 10.495 ; 10.495 ; Rise       ; LCLK            ;
+;  LAD[1]   ; LCLK       ; 9.966  ; 9.966  ; Rise       ; LCLK            ;
+;  LAD[2]   ; LCLK       ; 10.495 ; 10.495 ; Rise       ; LCLK            ;
+;  LAD[3]   ; LCLK       ; 8.917  ; 8.917  ; Rise       ; LCLK            ;
+;  LAD[4]   ; LCLK       ; 7.529  ; 7.529  ; Rise       ; LCLK            ;
+;  LAD[5]   ; LCLK       ; 8.646  ; 8.646  ; Rise       ; LCLK            ;
+;  LAD[6]   ; LCLK       ; 9.702  ; 9.702  ; Rise       ; LCLK            ;
+;  LAD[7]   ; LCLK       ; 8.354  ; 8.354  ; Rise       ; LCLK            ;
+;  LAD[8]   ; LCLK       ; 9.138  ; 9.138  ; Rise       ; LCLK            ;
+;  LAD[9]   ; LCLK       ; 8.565  ; 8.565  ; Rise       ; LCLK            ;
+;  LAD[10]  ; LCLK       ; 7.272  ; 7.272  ; Rise       ; LCLK            ;
+;  LAD[11]  ; LCLK       ; 7.328  ; 7.328  ; Rise       ; LCLK            ;
+;  LAD[12]  ; LCLK       ; 8.646  ; 8.646  ; Rise       ; LCLK            ;
+;  LAD[13]  ; LCLK       ; 11.595 ; 11.595 ; Rise       ; LCLK            ;
+;  LAD[14]  ; LCLK       ; 7.839  ; 7.839  ; Rise       ; LCLK            ;
+;  LAD[15]  ; LCLK       ; 10.227 ; 10.227 ; Rise       ; LCLK            ;
+; nLEDG     ; LCLK       ; 7.847  ; 7.847  ; Rise       ; LCLK            ;
+; nLEDR     ; LCLK       ; 8.814  ; 8.814  ; Rise       ; LCLK            ;
+; nREADY    ; LCLK       ; 6.489  ; 6.489  ; Rise       ; LCLK            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; F[*]      ; LCLK       ; 6.419  ; 6.419  ; Rise       ; LCLK            ;
+;  F[0]     ; LCLK       ; 6.419  ; 6.419  ; Rise       ; LCLK            ;
+;  F[1]     ; LCLK       ; 7.118  ; 7.118  ; Rise       ; LCLK            ;
+;  F[2]     ; LCLK       ; 11.942 ; 11.942 ; Rise       ; LCLK            ;
+;  F[3]     ; LCLK       ; 8.946  ; 8.946  ; Rise       ; LCLK            ;
+;  F[4]     ; LCLK       ; 8.808  ; 8.808  ; Rise       ; LCLK            ;
+;  F[5]     ; LCLK       ; 10.515 ; 10.515 ; Rise       ; LCLK            ;
+;  F[6]     ; LCLK       ; 9.310  ; 9.310  ; Rise       ; LCLK            ;
+;  F[12]    ; LCLK       ; 8.555  ; 8.555  ; Rise       ; LCLK            ;
+;  F[13]    ; LCLK       ; 10.187 ; 10.187 ; Rise       ; LCLK            ;
+;  F[16]    ; LCLK       ; 7.917  ; 7.917  ; Rise       ; LCLK            ;
+;  F[17]    ; LCLK       ; 10.006 ; 10.006 ; Rise       ; LCLK            ;
+;  F[28]    ; LCLK       ; 9.550  ; 9.550  ; Rise       ; LCLK            ;
+; LAD[*]    ; LCLK       ; 7.272  ; 7.272  ; Rise       ; LCLK            ;
+;  LAD[0]   ; LCLK       ; 10.495 ; 10.495 ; Rise       ; LCLK            ;
+;  LAD[1]   ; LCLK       ; 9.966  ; 9.966  ; Rise       ; LCLK            ;
+;  LAD[2]   ; LCLK       ; 10.495 ; 10.495 ; Rise       ; LCLK            ;
+;  LAD[3]   ; LCLK       ; 8.917  ; 8.917  ; Rise       ; LCLK            ;
+;  LAD[4]   ; LCLK       ; 7.529  ; 7.529  ; Rise       ; LCLK            ;
+;  LAD[5]   ; LCLK       ; 8.646  ; 8.646  ; Rise       ; LCLK            ;
+;  LAD[6]   ; LCLK       ; 9.702  ; 9.702  ; Rise       ; LCLK            ;
+;  LAD[7]   ; LCLK       ; 8.354  ; 8.354  ; Rise       ; LCLK            ;
+;  LAD[8]   ; LCLK       ; 9.138  ; 9.138  ; Rise       ; LCLK            ;
+;  LAD[9]   ; LCLK       ; 8.565  ; 8.565  ; Rise       ; LCLK            ;
+;  LAD[10]  ; LCLK       ; 7.272  ; 7.272  ; Rise       ; LCLK            ;
+;  LAD[11]  ; LCLK       ; 7.328  ; 7.328  ; Rise       ; LCLK            ;
+;  LAD[12]  ; LCLK       ; 8.646  ; 8.646  ; Rise       ; LCLK            ;
+;  LAD[13]  ; LCLK       ; 11.595 ; 11.595 ; Rise       ; LCLK            ;
+;  LAD[14]  ; LCLK       ; 7.839  ; 7.839  ; Rise       ; LCLK            ;
+;  LAD[15]  ; LCLK       ; 10.227 ; 10.227 ; Rise       ; LCLK            ;
+; nLEDG     ; LCLK       ; 7.847  ; 7.847  ; Rise       ; LCLK            ;
+; nLEDR     ; LCLK       ; 8.814  ; 8.814  ; Rise       ; LCLK            ;
+; nREADY    ; LCLK       ; 6.489  ; 6.489  ; Rise       ; LCLK            ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------+
+; Propagation Delay                                    ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; IDD[0]     ; D[0]        ; 9.948  ;    ;    ; 9.948  ;
+; IDD[0]     ; D[1]        ; 9.679  ;    ;    ; 9.679  ;
+; IDD[0]     ; D[2]        ; 10.715 ;    ;    ; 10.715 ;
+; IDD[0]     ; D[3]        ; 10.468 ;    ;    ; 10.468 ;
+; IDD[0]     ; D[4]        ; 11.280 ;    ;    ; 11.280 ;
+; IDD[0]     ; D[5]        ; 10.249 ;    ;    ; 10.249 ;
+; IDD[0]     ; D[6]        ; 9.428  ;    ;    ; 9.428  ;
+; IDD[0]     ; D[7]        ; 9.759  ;    ;    ; 9.759  ;
+; IDD[0]     ; D[8]        ; 9.759  ;    ;    ; 9.759  ;
+; IDD[0]     ; D[9]        ; 10.180 ;    ;    ; 10.180 ;
+; IDD[0]     ; D[10]       ; 8.911  ;    ;    ; 8.911  ;
+; IDD[0]     ; D[11]       ; 11.280 ;    ;    ; 11.280 ;
+; IDD[0]     ; D[12]       ; 9.314  ;    ;    ; 9.314  ;
+; IDD[0]     ; D[13]       ; 9.314  ;    ;    ; 9.314  ;
+; IDD[0]     ; D[14]       ; 9.394  ;    ;    ; 9.394  ;
+; IDD[0]     ; D[15]       ; 9.973  ;    ;    ; 9.973  ;
+; IDD[0]     ; D[16]       ; 10.155 ;    ;    ; 10.155 ;
+; IDD[0]     ; D[17]       ; 10.180 ;    ;    ; 10.180 ;
+; IDD[0]     ; D[18]       ; 9.937  ;    ;    ; 9.937  ;
+; IDD[0]     ; D[19]       ; 10.294 ;    ;    ; 10.294 ;
+; IDD[0]     ; D[20]       ; 9.700  ;    ;    ; 9.700  ;
+; IDD[0]     ; D[21]       ; 9.739  ;    ;    ; 9.739  ;
+; IDD[0]     ; D[22]       ; 9.739  ;    ;    ; 9.739  ;
+; IDD[0]     ; D[23]       ; 10.132 ;    ;    ; 10.132 ;
+; IDD[0]     ; D[24]       ; 9.752  ;    ;    ; 9.752  ;
+; IDD[0]     ; D[25]       ; 9.752  ;    ;    ; 9.752  ;
+; IDD[0]     ; D[26]       ; 10.586 ;    ;    ; 10.586 ;
+; IDD[0]     ; D[27]       ; 10.586 ;    ;    ; 10.586 ;
+; IDD[0]     ; D[28]       ; 10.559 ;    ;    ; 10.559 ;
+; IDD[0]     ; D[29]       ; 11.385 ;    ;    ; 11.385 ;
+; IDD[0]     ; D[30]       ; 10.692 ;    ;    ; 10.692 ;
+; IDD[0]     ; D[31]       ; 10.684 ;    ;    ; 10.684 ;
+; IDD[1]     ; D[0]        ; 14.934 ;    ;    ; 14.934 ;
+; IDD[1]     ; D[1]        ; 14.665 ;    ;    ; 14.665 ;
+; IDD[1]     ; D[2]        ; 15.704 ;    ;    ; 15.704 ;
+; IDD[1]     ; D[3]        ; 15.457 ;    ;    ; 15.457 ;
+; IDD[1]     ; D[4]        ; 16.266 ;    ;    ; 16.266 ;
+; IDD[1]     ; D[5]        ; 15.235 ;    ;    ; 15.235 ;
+; IDD[1]     ; D[6]        ; 14.414 ;    ;    ; 14.414 ;
+; IDD[1]     ; D[7]        ; 14.745 ;    ;    ; 14.745 ;
+; IDD[1]     ; D[8]        ; 14.745 ;    ;    ; 14.745 ;
+; IDD[1]     ; D[9]        ; 15.166 ;    ;    ; 15.166 ;
+; IDD[1]     ; D[10]       ; 13.897 ;    ;    ; 13.897 ;
+; IDD[1]     ; D[11]       ; 16.266 ;    ;    ; 16.266 ;
+; IDD[1]     ; D[12]       ; 14.300 ;    ;    ; 14.300 ;
+; IDD[1]     ; D[13]       ; 14.300 ;    ;    ; 14.300 ;
+; IDD[1]     ; D[14]       ; 14.383 ;    ;    ; 14.383 ;
+; IDD[1]     ; D[15]       ; 14.962 ;    ;    ; 14.962 ;
+; IDD[1]     ; D[16]       ; 15.141 ;    ;    ; 15.141 ;
+; IDD[1]     ; D[17]       ; 15.166 ;    ;    ; 15.166 ;
+; IDD[1]     ; D[18]       ; 14.926 ;    ;    ; 14.926 ;
+; IDD[1]     ; D[19]       ; 15.283 ;    ;    ; 15.283 ;
+; IDD[1]     ; D[20]       ; 14.686 ;    ;    ; 14.686 ;
+; IDD[1]     ; D[21]       ; 14.725 ;    ;    ; 14.725 ;
+; IDD[1]     ; D[22]       ; 14.725 ;    ;    ; 14.725 ;
+; IDD[1]     ; D[23]       ; 15.118 ;    ;    ; 15.118 ;
+; IDD[1]     ; D[24]       ; 14.738 ;    ;    ; 14.738 ;
+; IDD[1]     ; D[25]       ; 14.738 ;    ;    ; 14.738 ;
+; IDD[1]     ; D[26]       ; 15.572 ;    ;    ; 15.572 ;
+; IDD[1]     ; D[27]       ; 15.572 ;    ;    ; 15.572 ;
+; IDD[1]     ; D[28]       ; 15.545 ;    ;    ; 15.545 ;
+; IDD[1]     ; D[29]       ; 16.371 ;    ;    ; 16.371 ;
+; IDD[1]     ; D[30]       ; 15.681 ;    ;    ; 15.681 ;
+; IDD[1]     ; D[31]       ; 15.673 ;    ;    ; 15.673 ;
+; IDD[2]     ; D[0]        ; 10.214 ;    ;    ; 10.214 ;
+; IDD[2]     ; D[1]        ; 9.945  ;    ;    ; 9.945  ;
+; IDD[2]     ; D[2]        ; 10.980 ;    ;    ; 10.980 ;
+; IDD[2]     ; D[3]        ; 10.733 ;    ;    ; 10.733 ;
+; IDD[2]     ; D[4]        ; 11.546 ;    ;    ; 11.546 ;
+; IDD[2]     ; D[5]        ; 10.515 ;    ;    ; 10.515 ;
+; IDD[2]     ; D[6]        ; 9.694  ;    ;    ; 9.694  ;
+; IDD[2]     ; D[7]        ; 10.025 ;    ;    ; 10.025 ;
+; IDD[2]     ; D[8]        ; 10.025 ;    ;    ; 10.025 ;
+; IDD[2]     ; D[9]        ; 10.446 ;    ;    ; 10.446 ;
+; IDD[2]     ; D[10]       ; 9.177  ;    ;    ; 9.177  ;
+; IDD[2]     ; D[11]       ; 11.546 ;    ;    ; 11.546 ;
+; IDD[2]     ; D[12]       ; 9.580  ;    ;    ; 9.580  ;
+; IDD[2]     ; D[13]       ; 9.580  ;    ;    ; 9.580  ;
+; IDD[2]     ; D[14]       ; 9.659  ;    ;    ; 9.659  ;
+; IDD[2]     ; D[15]       ; 10.238 ;    ;    ; 10.238 ;
+; IDD[2]     ; D[16]       ; 10.421 ;    ;    ; 10.421 ;
+; IDD[2]     ; D[17]       ; 10.446 ;    ;    ; 10.446 ;
+; IDD[2]     ; D[18]       ; 10.202 ;    ;    ; 10.202 ;
+; IDD[2]     ; D[19]       ; 10.559 ;    ;    ; 10.559 ;
+; IDD[2]     ; D[20]       ; 9.966  ;    ;    ; 9.966  ;
+; IDD[2]     ; D[21]       ; 10.005 ;    ;    ; 10.005 ;
+; IDD[2]     ; D[22]       ; 10.005 ;    ;    ; 10.005 ;
+; IDD[2]     ; D[23]       ; 10.398 ;    ;    ; 10.398 ;
+; IDD[2]     ; D[24]       ; 10.018 ;    ;    ; 10.018 ;
+; IDD[2]     ; D[25]       ; 10.018 ;    ;    ; 10.018 ;
+; IDD[2]     ; D[26]       ; 10.852 ;    ;    ; 10.852 ;
+; IDD[2]     ; D[27]       ; 10.852 ;    ;    ; 10.852 ;
+; IDD[2]     ; D[28]       ; 10.825 ;    ;    ; 10.825 ;
+; IDD[2]     ; D[29]       ; 11.651 ;    ;    ; 11.651 ;
+; IDD[2]     ; D[30]       ; 10.957 ;    ;    ; 10.957 ;
+; IDD[2]     ; D[31]       ; 10.949 ;    ;    ; 10.949 ;
+; IDE[0]     ; E[0]        ; 13.726 ;    ;    ; 13.726 ;
+; IDE[0]     ; E[1]        ; 10.965 ;    ;    ; 10.965 ;
+; IDE[0]     ; E[2]        ; 15.177 ;    ;    ; 15.177 ;
+; IDE[0]     ; E[3]        ; 11.811 ;    ;    ; 11.811 ;
+; IDE[0]     ; E[4]        ; 12.535 ;    ;    ; 12.535 ;
+; IDE[0]     ; E[5]        ; 12.277 ;    ;    ; 12.277 ;
+; IDE[0]     ; E[6]        ; 12.261 ;    ;    ; 12.261 ;
+; IDE[0]     ; E[7]        ; 15.250 ;    ;    ; 15.250 ;
+; IDE[0]     ; E[8]        ; 9.597  ;    ;    ; 9.597  ;
+; IDE[0]     ; E[9]        ; 9.215  ;    ;    ; 9.215  ;
+; IDE[0]     ; E[10]       ; 9.598  ;    ;    ; 9.598  ;
+; IDE[0]     ; E[11]       ; 9.605  ;    ;    ; 9.605  ;
+; IDE[0]     ; E[12]       ; 9.598  ;    ;    ; 9.598  ;
+; IDE[0]     ; E[13]       ; 9.605  ;    ;    ; 9.605  ;
+; IDE[0]     ; E[14]       ; 13.613 ;    ;    ; 13.613 ;
+; IDE[0]     ; E[15]       ; 9.519  ;    ;    ; 9.519  ;
+; IDE[0]     ; E[16]       ; 15.823 ;    ;    ; 15.823 ;
+; IDE[0]     ; E[17]       ; 15.622 ;    ;    ; 15.622 ;
+; IDE[0]     ; E[18]       ; 13.640 ;    ;    ; 13.640 ;
+; IDE[0]     ; E[19]       ; 15.059 ;    ;    ; 15.059 ;
+; IDE[0]     ; E[20]       ; 11.998 ;    ;    ; 11.998 ;
+; IDE[0]     ; E[21]       ; 16.145 ;    ;    ; 16.145 ;
+; IDE[0]     ; E[22]       ; 15.624 ;    ;    ; 15.624 ;
+; IDE[0]     ; E[23]       ; 15.627 ;    ;    ; 15.627 ;
+; IDE[0]     ; E[24]       ; 14.175 ;    ;    ; 14.175 ;
+; IDE[0]     ; E[25]       ; 14.174 ;    ;    ; 14.174 ;
+; IDE[0]     ; E[26]       ; 14.529 ;    ;    ; 14.529 ;
+; IDE[0]     ; E[27]       ; 10.317 ;    ;    ; 10.317 ;
+; IDE[0]     ; E[28]       ; 9.214  ;    ;    ; 9.214  ;
+; IDE[0]     ; E[29]       ; 11.789 ;    ;    ; 11.789 ;
+; IDE[0]     ; E[30]       ; 10.552 ;    ;    ; 10.552 ;
+; IDE[0]     ; E[31]       ; 11.885 ;    ;    ; 11.885 ;
+; IDE[1]     ; E[0]        ; 13.235 ;    ;    ; 13.235 ;
+; IDE[1]     ; E[1]        ; 10.474 ;    ;    ; 10.474 ;
+; IDE[1]     ; E[2]        ; 14.684 ;    ;    ; 14.684 ;
+; IDE[1]     ; E[3]        ; 11.318 ;    ;    ; 11.318 ;
+; IDE[1]     ; E[4]        ; 12.044 ;    ;    ; 12.044 ;
+; IDE[1]     ; E[5]        ; 11.786 ;    ;    ; 11.786 ;
+; IDE[1]     ; E[6]        ; 11.770 ;    ;    ; 11.770 ;
+; IDE[1]     ; E[7]        ; 14.759 ;    ;    ; 14.759 ;
+; IDE[1]     ; E[8]        ; 9.106  ;    ;    ; 9.106  ;
+; IDE[1]     ; E[9]        ; 8.724  ;    ;    ; 8.724  ;
+; IDE[1]     ; E[10]       ; 9.107  ;    ;    ; 9.107  ;
+; IDE[1]     ; E[11]       ; 9.114  ;    ;    ; 9.114  ;
+; IDE[1]     ; E[12]       ; 9.107  ;    ;    ; 9.107  ;
+; IDE[1]     ; E[13]       ; 9.114  ;    ;    ; 9.114  ;
+; IDE[1]     ; E[14]       ; 13.120 ;    ;    ; 13.120 ;
+; IDE[1]     ; E[15]       ; 9.026  ;    ;    ; 9.026  ;
+; IDE[1]     ; E[16]       ; 15.332 ;    ;    ; 15.332 ;
+; IDE[1]     ; E[17]       ; 15.131 ;    ;    ; 15.131 ;
+; IDE[1]     ; E[18]       ; 13.147 ;    ;    ; 13.147 ;
+; IDE[1]     ; E[19]       ; 14.566 ;    ;    ; 14.566 ;
+; IDE[1]     ; E[20]       ; 11.507 ;    ;    ; 11.507 ;
+; IDE[1]     ; E[21]       ; 15.654 ;    ;    ; 15.654 ;
+; IDE[1]     ; E[22]       ; 15.133 ;    ;    ; 15.133 ;
+; IDE[1]     ; E[23]       ; 15.136 ;    ;    ; 15.136 ;
+; IDE[1]     ; E[24]       ; 13.684 ;    ;    ; 13.684 ;
+; IDE[1]     ; E[25]       ; 13.683 ;    ;    ; 13.683 ;
+; IDE[1]     ; E[26]       ; 14.038 ;    ;    ; 14.038 ;
+; IDE[1]     ; E[27]       ; 9.826  ;    ;    ; 9.826  ;
+; IDE[1]     ; E[28]       ; 8.723  ;    ;    ; 8.723  ;
+; IDE[1]     ; E[29]       ; 11.298 ;    ;    ; 11.298 ;
+; IDE[1]     ; E[30]       ; 10.059 ;    ;    ; 10.059 ;
+; IDE[1]     ; E[31]       ; 11.392 ;    ;    ; 11.392 ;
+; IDE[2]     ; E[0]        ; 14.276 ;    ;    ; 14.276 ;
+; IDE[2]     ; E[1]        ; 11.515 ;    ;    ; 11.515 ;
+; IDE[2]     ; E[2]        ; 15.726 ;    ;    ; 15.726 ;
+; IDE[2]     ; E[3]        ; 12.360 ;    ;    ; 12.360 ;
+; IDE[2]     ; E[4]        ; 13.085 ;    ;    ; 13.085 ;
+; IDE[2]     ; E[5]        ; 12.827 ;    ;    ; 12.827 ;
+; IDE[2]     ; E[6]        ; 12.811 ;    ;    ; 12.811 ;
+; IDE[2]     ; E[7]        ; 15.800 ;    ;    ; 15.800 ;
+; IDE[2]     ; E[8]        ; 10.147 ;    ;    ; 10.147 ;
+; IDE[2]     ; E[9]        ; 9.765  ;    ;    ; 9.765  ;
+; IDE[2]     ; E[10]       ; 10.148 ;    ;    ; 10.148 ;
+; IDE[2]     ; E[11]       ; 10.155 ;    ;    ; 10.155 ;
+; IDE[2]     ; E[12]       ; 10.148 ;    ;    ; 10.148 ;
+; IDE[2]     ; E[13]       ; 10.155 ;    ;    ; 10.155 ;
+; IDE[2]     ; E[14]       ; 14.162 ;    ;    ; 14.162 ;
+; IDE[2]     ; E[15]       ; 10.068 ;    ;    ; 10.068 ;
+; IDE[2]     ; E[16]       ; 16.373 ;    ;    ; 16.373 ;
+; IDE[2]     ; E[17]       ; 16.172 ;    ;    ; 16.172 ;
+; IDE[2]     ; E[18]       ; 14.189 ;    ;    ; 14.189 ;
+; IDE[2]     ; E[19]       ; 15.608 ;    ;    ; 15.608 ;
+; IDE[2]     ; E[20]       ; 12.548 ;    ;    ; 12.548 ;
+; IDE[2]     ; E[21]       ; 16.695 ;    ;    ; 16.695 ;
+; IDE[2]     ; E[22]       ; 16.174 ;    ;    ; 16.174 ;
+; IDE[2]     ; E[23]       ; 16.177 ;    ;    ; 16.177 ;
+; IDE[2]     ; E[24]       ; 14.725 ;    ;    ; 14.725 ;
+; IDE[2]     ; E[25]       ; 14.724 ;    ;    ; 14.724 ;
+; IDE[2]     ; E[26]       ; 15.079 ;    ;    ; 15.079 ;
+; IDE[2]     ; E[27]       ; 10.867 ;    ;    ; 10.867 ;
+; IDE[2]     ; E[28]       ; 9.764  ;    ;    ; 9.764  ;
+; IDE[2]     ; E[29]       ; 12.339 ;    ;    ; 12.339 ;
+; IDE[2]     ; E[30]       ; 11.101 ;    ;    ; 11.101 ;
+; IDE[2]     ; E[31]       ; 12.434 ;    ;    ; 12.434 ;
+; IDF[0]     ; F[0]        ; 9.525  ;    ;    ; 9.525  ;
+; IDF[0]     ; F[1]        ; 10.661 ;    ;    ; 10.661 ;
+; IDF[0]     ; F[2]        ; 13.309 ;    ;    ; 13.309 ;
+; IDF[0]     ; F[3]        ; 9.767  ;    ;    ; 9.767  ;
+; IDF[0]     ; F[4]        ; 11.303 ;    ;    ; 11.303 ;
+; IDF[0]     ; F[5]        ; 11.377 ;    ;    ; 11.377 ;
+; IDF[0]     ; F[6]        ; 10.171 ;    ;    ; 10.171 ;
+; IDF[0]     ; F[7]        ; 11.601 ;    ;    ; 11.601 ;
+; IDF[0]     ; F[8]        ; 11.604 ;    ;    ; 11.604 ;
+; IDF[0]     ; F[9]        ; 11.599 ;    ;    ; 11.599 ;
+; IDF[0]     ; F[10]       ; 12.570 ;    ;    ; 12.570 ;
+; IDF[0]     ; F[11]       ; 12.917 ;    ;    ; 12.917 ;
+; IDF[0]     ; F[12]       ; 12.329 ;    ;    ; 12.329 ;
+; IDF[0]     ; F[13]       ; 11.861 ;    ;    ; 11.861 ;
+; IDF[0]     ; F[14]       ; 11.832 ;    ;    ; 11.832 ;
+; IDF[0]     ; F[15]       ; 12.551 ;    ;    ; 12.551 ;
+; IDF[0]     ; F[16]       ; 11.461 ;    ;    ; 11.461 ;
+; IDF[0]     ; F[17]       ; 11.471 ;    ;    ; 11.471 ;
+; IDF[0]     ; F[18]       ; 10.261 ;    ;    ; 10.261 ;
+; IDF[0]     ; F[19]       ; 10.016 ;    ;    ; 10.016 ;
+; IDF[0]     ; F[20]       ; 9.471  ;    ;    ; 9.471  ;
+; IDF[0]     ; F[21]       ; 9.758  ;    ;    ; 9.758  ;
+; IDF[0]     ; F[22]       ; 10.499 ;    ;    ; 10.499 ;
+; IDF[0]     ; F[23]       ; 10.025 ;    ;    ; 10.025 ;
+; IDF[0]     ; F[24]       ; 11.171 ;    ;    ; 11.171 ;
+; IDF[0]     ; F[25]       ; 10.712 ;    ;    ; 10.712 ;
+; IDF[0]     ; F[26]       ; 9.758  ;    ;    ; 9.758  ;
+; IDF[0]     ; F[27]       ; 9.747  ;    ;    ; 9.747  ;
+; IDF[0]     ; F[28]       ; 10.633 ;    ;    ; 10.633 ;
+; IDF[0]     ; F[29]       ; 9.471  ;    ;    ; 9.471  ;
+; IDF[0]     ; F[30]       ; 10.253 ;    ;    ; 10.253 ;
+; IDF[0]     ; F[31]       ; 11.297 ;    ;    ; 11.297 ;
+; IDF[1]     ; F[0]        ; 11.042 ;    ;    ; 11.042 ;
+; IDF[1]     ; F[1]        ; 12.177 ;    ;    ; 12.177 ;
+; IDF[1]     ; F[2]        ; 14.826 ;    ;    ; 14.826 ;
+; IDF[1]     ; F[3]        ; 11.284 ;    ;    ; 11.284 ;
+; IDF[1]     ; F[4]        ; 12.858 ;    ;    ; 12.858 ;
+; IDF[1]     ; F[5]        ; 12.820 ;    ;    ; 12.820 ;
+; IDF[1]     ; F[6]        ; 11.612 ;    ;    ; 11.612 ;
+; IDF[1]     ; F[7]        ; 13.118 ;    ;    ; 13.118 ;
+; IDF[1]     ; F[8]        ; 13.121 ;    ;    ; 13.121 ;
+; IDF[1]     ; F[9]        ; 13.116 ;    ;    ; 13.116 ;
+; IDF[1]     ; F[10]       ; 14.087 ;    ;    ; 14.087 ;
+; IDF[1]     ; F[11]       ; 14.434 ;    ;    ; 14.434 ;
+; IDF[1]     ; F[12]       ; 13.845 ;    ;    ; 13.845 ;
+; IDF[1]     ; F[13]       ; 13.378 ;    ;    ; 13.378 ;
+; IDF[1]     ; F[14]       ; 13.349 ;    ;    ; 13.349 ;
+; IDF[1]     ; F[15]       ; 14.068 ;    ;    ; 14.068 ;
+; IDF[1]     ; F[16]       ; 12.977 ;    ;    ; 12.977 ;
+; IDF[1]     ; F[17]       ; 12.988 ;    ;    ; 12.988 ;
+; IDF[1]     ; F[18]       ; 11.778 ;    ;    ; 11.778 ;
+; IDF[1]     ; F[19]       ; 11.533 ;    ;    ; 11.533 ;
+; IDF[1]     ; F[20]       ; 10.988 ;    ;    ; 10.988 ;
+; IDF[1]     ; F[21]       ; 11.275 ;    ;    ; 11.275 ;
+; IDF[1]     ; F[22]       ; 12.016 ;    ;    ; 12.016 ;
+; IDF[1]     ; F[23]       ; 11.542 ;    ;    ; 11.542 ;
+; IDF[1]     ; F[24]       ; 12.688 ;    ;    ; 12.688 ;
+; IDF[1]     ; F[25]       ; 12.229 ;    ;    ; 12.229 ;
+; IDF[1]     ; F[26]       ; 11.275 ;    ;    ; 11.275 ;
+; IDF[1]     ; F[27]       ; 11.264 ;    ;    ; 11.264 ;
+; IDF[1]     ; F[28]       ; 12.149 ;    ;    ; 12.149 ;
+; IDF[1]     ; F[29]       ; 10.988 ;    ;    ; 10.988 ;
+; IDF[1]     ; F[30]       ; 11.770 ;    ;    ; 11.770 ;
+; IDF[1]     ; F[31]       ; 12.814 ;    ;    ; 12.814 ;
+; IDF[2]     ; F[0]        ; 9.402  ;    ;    ; 9.402  ;
+; IDF[2]     ; F[1]        ; 10.537 ;    ;    ; 10.537 ;
+; IDF[2]     ; F[2]        ; 13.183 ;    ;    ; 13.183 ;
+; IDF[2]     ; F[3]        ; 9.641  ;    ;    ; 9.641  ;
+; IDF[2]     ; F[4]        ; 11.180 ;    ;    ; 11.180 ;
+; IDF[2]     ; F[5]        ; 11.180 ;    ;    ; 11.180 ;
+; IDF[2]     ; F[6]        ; 9.972  ;    ;    ; 9.972  ;
+; IDF[2]     ; F[7]        ; 11.478 ;    ;    ; 11.478 ;
+; IDF[2]     ; F[8]        ; 11.481 ;    ;    ; 11.481 ;
+; IDF[2]     ; F[9]        ; 11.476 ;    ;    ; 11.476 ;
+; IDF[2]     ; F[10]       ; 12.447 ;    ;    ; 12.447 ;
+; IDF[2]     ; F[11]       ; 12.794 ;    ;    ; 12.794 ;
+; IDF[2]     ; F[12]       ; 12.205 ;    ;    ; 12.205 ;
+; IDF[2]     ; F[13]       ; 11.738 ;    ;    ; 11.738 ;
+; IDF[2]     ; F[14]       ; 11.706 ;    ;    ; 11.706 ;
+; IDF[2]     ; F[15]       ; 12.425 ;    ;    ; 12.425 ;
+; IDF[2]     ; F[16]       ; 11.337 ;    ;    ; 11.337 ;
+; IDF[2]     ; F[17]       ; 11.348 ;    ;    ; 11.348 ;
+; IDF[2]     ; F[18]       ; 10.135 ;    ;    ; 10.135 ;
+; IDF[2]     ; F[19]       ; 9.890  ;    ;    ; 9.890  ;
+; IDF[2]     ; F[20]       ; 9.348  ;    ;    ; 9.348  ;
+; IDF[2]     ; F[21]       ; 9.635  ;    ;    ; 9.635  ;
+; IDF[2]     ; F[22]       ; 10.376 ;    ;    ; 10.376 ;
+; IDF[2]     ; F[23]       ; 9.902  ;    ;    ; 9.902  ;
+; IDF[2]     ; F[24]       ; 11.048 ;    ;    ; 11.048 ;
+; IDF[2]     ; F[25]       ; 10.589 ;    ;    ; 10.589 ;
+; IDF[2]     ; F[26]       ; 9.635  ;    ;    ; 9.635  ;
+; IDF[2]     ; F[27]       ; 9.624  ;    ;    ; 9.624  ;
+; IDF[2]     ; F[28]       ; 10.509 ;    ;    ; 10.509 ;
+; IDF[2]     ; F[29]       ; 9.348  ;    ;    ; 9.348  ;
+; IDF[2]     ; F[30]       ; 10.127 ;    ;    ; 10.127 ;
+; IDF[2]     ; F[31]       ; 11.171 ;    ;    ; 11.171 ;
+; nADS       ; LAD[0]      ; 13.238 ;    ;    ; 13.238 ;
+; nADS       ; LAD[1]      ; 12.709 ;    ;    ; 12.709 ;
+; nADS       ; LAD[2]      ; 13.238 ;    ;    ; 13.238 ;
+; nADS       ; LAD[3]      ; 11.660 ;    ;    ; 11.660 ;
+; nADS       ; LAD[4]      ; 10.272 ;    ;    ; 10.272 ;
+; nADS       ; LAD[5]      ; 11.389 ;    ;    ; 11.389 ;
+; nADS       ; LAD[6]      ; 12.445 ;    ;    ; 12.445 ;
+; nADS       ; LAD[7]      ; 11.097 ;    ;    ; 11.097 ;
+; nADS       ; LAD[8]      ; 11.881 ;    ;    ; 11.881 ;
+; nADS       ; LAD[9]      ; 11.308 ;    ;    ; 11.308 ;
+; nADS       ; LAD[10]     ; 10.015 ;    ;    ; 10.015 ;
+; nADS       ; LAD[11]     ; 10.071 ;    ;    ; 10.071 ;
+; nADS       ; LAD[12]     ; 11.389 ;    ;    ; 11.389 ;
+; nADS       ; LAD[13]     ; 14.338 ;    ;    ; 14.338 ;
+; nADS       ; LAD[14]     ; 10.582 ;    ;    ; 10.582 ;
+; nADS       ; LAD[15]     ; 12.970 ;    ;    ; 12.970 ;
++------------+-------------+--------+----+----+--------+
+
+
++------------------------------------------------------+
+; Minimum Propagation Delay                            ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; IDD[0]     ; D[0]        ; 9.948  ;    ;    ; 9.948  ;
+; IDD[0]     ; D[1]        ; 9.679  ;    ;    ; 9.679  ;
+; IDD[0]     ; D[2]        ; 10.715 ;    ;    ; 10.715 ;
+; IDD[0]     ; D[3]        ; 10.468 ;    ;    ; 10.468 ;
+; IDD[0]     ; D[4]        ; 11.280 ;    ;    ; 11.280 ;
+; IDD[0]     ; D[5]        ; 10.249 ;    ;    ; 10.249 ;
+; IDD[0]     ; D[6]        ; 9.428  ;    ;    ; 9.428  ;
+; IDD[0]     ; D[7]        ; 9.759  ;    ;    ; 9.759  ;
+; IDD[0]     ; D[8]        ; 9.759  ;    ;    ; 9.759  ;
+; IDD[0]     ; D[9]        ; 10.180 ;    ;    ; 10.180 ;
+; IDD[0]     ; D[10]       ; 8.911  ;    ;    ; 8.911  ;
+; IDD[0]     ; D[11]       ; 11.280 ;    ;    ; 11.280 ;
+; IDD[0]     ; D[12]       ; 9.314  ;    ;    ; 9.314  ;
+; IDD[0]     ; D[13]       ; 9.314  ;    ;    ; 9.314  ;
+; IDD[0]     ; D[14]       ; 9.394  ;    ;    ; 9.394  ;
+; IDD[0]     ; D[15]       ; 9.973  ;    ;    ; 9.973  ;
+; IDD[0]     ; D[16]       ; 10.155 ;    ;    ; 10.155 ;
+; IDD[0]     ; D[17]       ; 10.180 ;    ;    ; 10.180 ;
+; IDD[0]     ; D[18]       ; 9.937  ;    ;    ; 9.937  ;
+; IDD[0]     ; D[19]       ; 10.294 ;    ;    ; 10.294 ;
+; IDD[0]     ; D[20]       ; 9.700  ;    ;    ; 9.700  ;
+; IDD[0]     ; D[21]       ; 9.739  ;    ;    ; 9.739  ;
+; IDD[0]     ; D[22]       ; 9.739  ;    ;    ; 9.739  ;
+; IDD[0]     ; D[23]       ; 10.132 ;    ;    ; 10.132 ;
+; IDD[0]     ; D[24]       ; 9.752  ;    ;    ; 9.752  ;
+; IDD[0]     ; D[25]       ; 9.752  ;    ;    ; 9.752  ;
+; IDD[0]     ; D[26]       ; 10.586 ;    ;    ; 10.586 ;
+; IDD[0]     ; D[27]       ; 10.586 ;    ;    ; 10.586 ;
+; IDD[0]     ; D[28]       ; 10.559 ;    ;    ; 10.559 ;
+; IDD[0]     ; D[29]       ; 11.385 ;    ;    ; 11.385 ;
+; IDD[0]     ; D[30]       ; 10.692 ;    ;    ; 10.692 ;
+; IDD[0]     ; D[31]       ; 10.684 ;    ;    ; 10.684 ;
+; IDD[1]     ; D[0]        ; 14.934 ;    ;    ; 14.934 ;
+; IDD[1]     ; D[1]        ; 14.665 ;    ;    ; 14.665 ;
+; IDD[1]     ; D[2]        ; 15.704 ;    ;    ; 15.704 ;
+; IDD[1]     ; D[3]        ; 15.457 ;    ;    ; 15.457 ;
+; IDD[1]     ; D[4]        ; 16.266 ;    ;    ; 16.266 ;
+; IDD[1]     ; D[5]        ; 15.235 ;    ;    ; 15.235 ;
+; IDD[1]     ; D[6]        ; 14.414 ;    ;    ; 14.414 ;
+; IDD[1]     ; D[7]        ; 14.745 ;    ;    ; 14.745 ;
+; IDD[1]     ; D[8]        ; 14.745 ;    ;    ; 14.745 ;
+; IDD[1]     ; D[9]        ; 15.166 ;    ;    ; 15.166 ;
+; IDD[1]     ; D[10]       ; 13.897 ;    ;    ; 13.897 ;
+; IDD[1]     ; D[11]       ; 16.266 ;    ;    ; 16.266 ;
+; IDD[1]     ; D[12]       ; 14.300 ;    ;    ; 14.300 ;
+; IDD[1]     ; D[13]       ; 14.300 ;    ;    ; 14.300 ;
+; IDD[1]     ; D[14]       ; 14.383 ;    ;    ; 14.383 ;
+; IDD[1]     ; D[15]       ; 14.962 ;    ;    ; 14.962 ;
+; IDD[1]     ; D[16]       ; 15.141 ;    ;    ; 15.141 ;
+; IDD[1]     ; D[17]       ; 15.166 ;    ;    ; 15.166 ;
+; IDD[1]     ; D[18]       ; 14.926 ;    ;    ; 14.926 ;
+; IDD[1]     ; D[19]       ; 15.283 ;    ;    ; 15.283 ;
+; IDD[1]     ; D[20]       ; 14.686 ;    ;    ; 14.686 ;
+; IDD[1]     ; D[21]       ; 14.725 ;    ;    ; 14.725 ;
+; IDD[1]     ; D[22]       ; 14.725 ;    ;    ; 14.725 ;
+; IDD[1]     ; D[23]       ; 15.118 ;    ;    ; 15.118 ;
+; IDD[1]     ; D[24]       ; 14.738 ;    ;    ; 14.738 ;
+; IDD[1]     ; D[25]       ; 14.738 ;    ;    ; 14.738 ;
+; IDD[1]     ; D[26]       ; 15.572 ;    ;    ; 15.572 ;
+; IDD[1]     ; D[27]       ; 15.572 ;    ;    ; 15.572 ;
+; IDD[1]     ; D[28]       ; 15.545 ;    ;    ; 15.545 ;
+; IDD[1]     ; D[29]       ; 16.371 ;    ;    ; 16.371 ;
+; IDD[1]     ; D[30]       ; 15.681 ;    ;    ; 15.681 ;
+; IDD[1]     ; D[31]       ; 15.673 ;    ;    ; 15.673 ;
+; IDD[2]     ; D[0]        ; 10.214 ;    ;    ; 10.214 ;
+; IDD[2]     ; D[1]        ; 9.945  ;    ;    ; 9.945  ;
+; IDD[2]     ; D[2]        ; 10.980 ;    ;    ; 10.980 ;
+; IDD[2]     ; D[3]        ; 10.733 ;    ;    ; 10.733 ;
+; IDD[2]     ; D[4]        ; 11.546 ;    ;    ; 11.546 ;
+; IDD[2]     ; D[5]        ; 10.515 ;    ;    ; 10.515 ;
+; IDD[2]     ; D[6]        ; 9.694  ;    ;    ; 9.694  ;
+; IDD[2]     ; D[7]        ; 10.025 ;    ;    ; 10.025 ;
+; IDD[2]     ; D[8]        ; 10.025 ;    ;    ; 10.025 ;
+; IDD[2]     ; D[9]        ; 10.446 ;    ;    ; 10.446 ;
+; IDD[2]     ; D[10]       ; 9.177  ;    ;    ; 9.177  ;
+; IDD[2]     ; D[11]       ; 11.546 ;    ;    ; 11.546 ;
+; IDD[2]     ; D[12]       ; 9.580  ;    ;    ; 9.580  ;
+; IDD[2]     ; D[13]       ; 9.580  ;    ;    ; 9.580  ;
+; IDD[2]     ; D[14]       ; 9.659  ;    ;    ; 9.659  ;
+; IDD[2]     ; D[15]       ; 10.238 ;    ;    ; 10.238 ;
+; IDD[2]     ; D[16]       ; 10.421 ;    ;    ; 10.421 ;
+; IDD[2]     ; D[17]       ; 10.446 ;    ;    ; 10.446 ;
+; IDD[2]     ; D[18]       ; 10.202 ;    ;    ; 10.202 ;
+; IDD[2]     ; D[19]       ; 10.559 ;    ;    ; 10.559 ;
+; IDD[2]     ; D[20]       ; 9.966  ;    ;    ; 9.966  ;
+; IDD[2]     ; D[21]       ; 10.005 ;    ;    ; 10.005 ;
+; IDD[2]     ; D[22]       ; 10.005 ;    ;    ; 10.005 ;
+; IDD[2]     ; D[23]       ; 10.398 ;    ;    ; 10.398 ;
+; IDD[2]     ; D[24]       ; 10.018 ;    ;    ; 10.018 ;
+; IDD[2]     ; D[25]       ; 10.018 ;    ;    ; 10.018 ;
+; IDD[2]     ; D[26]       ; 10.852 ;    ;    ; 10.852 ;
+; IDD[2]     ; D[27]       ; 10.852 ;    ;    ; 10.852 ;
+; IDD[2]     ; D[28]       ; 10.825 ;    ;    ; 10.825 ;
+; IDD[2]     ; D[29]       ; 11.651 ;    ;    ; 11.651 ;
+; IDD[2]     ; D[30]       ; 10.957 ;    ;    ; 10.957 ;
+; IDD[2]     ; D[31]       ; 10.949 ;    ;    ; 10.949 ;
+; IDE[0]     ; E[0]        ; 13.726 ;    ;    ; 13.726 ;
+; IDE[0]     ; E[1]        ; 10.965 ;    ;    ; 10.965 ;
+; IDE[0]     ; E[2]        ; 15.177 ;    ;    ; 15.177 ;
+; IDE[0]     ; E[3]        ; 11.811 ;    ;    ; 11.811 ;
+; IDE[0]     ; E[4]        ; 12.535 ;    ;    ; 12.535 ;
+; IDE[0]     ; E[5]        ; 12.277 ;    ;    ; 12.277 ;
+; IDE[0]     ; E[6]        ; 12.261 ;    ;    ; 12.261 ;
+; IDE[0]     ; E[7]        ; 15.250 ;    ;    ; 15.250 ;
+; IDE[0]     ; E[8]        ; 9.597  ;    ;    ; 9.597  ;
+; IDE[0]     ; E[9]        ; 9.215  ;    ;    ; 9.215  ;
+; IDE[0]     ; E[10]       ; 9.598  ;    ;    ; 9.598  ;
+; IDE[0]     ; E[11]       ; 9.605  ;    ;    ; 9.605  ;
+; IDE[0]     ; E[12]       ; 9.598  ;    ;    ; 9.598  ;
+; IDE[0]     ; E[13]       ; 9.605  ;    ;    ; 9.605  ;
+; IDE[0]     ; E[14]       ; 13.613 ;    ;    ; 13.613 ;
+; IDE[0]     ; E[15]       ; 9.519  ;    ;    ; 9.519  ;
+; IDE[0]     ; E[16]       ; 15.823 ;    ;    ; 15.823 ;
+; IDE[0]     ; E[17]       ; 15.622 ;    ;    ; 15.622 ;
+; IDE[0]     ; E[18]       ; 13.640 ;    ;    ; 13.640 ;
+; IDE[0]     ; E[19]       ; 15.059 ;    ;    ; 15.059 ;
+; IDE[0]     ; E[20]       ; 11.998 ;    ;    ; 11.998 ;
+; IDE[0]     ; E[21]       ; 16.145 ;    ;    ; 16.145 ;
+; IDE[0]     ; E[22]       ; 15.624 ;    ;    ; 15.624 ;
+; IDE[0]     ; E[23]       ; 15.627 ;    ;    ; 15.627 ;
+; IDE[0]     ; E[24]       ; 14.175 ;    ;    ; 14.175 ;
+; IDE[0]     ; E[25]       ; 14.174 ;    ;    ; 14.174 ;
+; IDE[0]     ; E[26]       ; 14.529 ;    ;    ; 14.529 ;
+; IDE[0]     ; E[27]       ; 10.317 ;    ;    ; 10.317 ;
+; IDE[0]     ; E[28]       ; 9.214  ;    ;    ; 9.214  ;
+; IDE[0]     ; E[29]       ; 11.789 ;    ;    ; 11.789 ;
+; IDE[0]     ; E[30]       ; 10.552 ;    ;    ; 10.552 ;
+; IDE[0]     ; E[31]       ; 11.885 ;    ;    ; 11.885 ;
+; IDE[1]     ; E[0]        ; 13.235 ;    ;    ; 13.235 ;
+; IDE[1]     ; E[1]        ; 10.474 ;    ;    ; 10.474 ;
+; IDE[1]     ; E[2]        ; 14.684 ;    ;    ; 14.684 ;
+; IDE[1]     ; E[3]        ; 11.318 ;    ;    ; 11.318 ;
+; IDE[1]     ; E[4]        ; 12.044 ;    ;    ; 12.044 ;
+; IDE[1]     ; E[5]        ; 11.786 ;    ;    ; 11.786 ;
+; IDE[1]     ; E[6]        ; 11.770 ;    ;    ; 11.770 ;
+; IDE[1]     ; E[7]        ; 14.759 ;    ;    ; 14.759 ;
+; IDE[1]     ; E[8]        ; 9.106  ;    ;    ; 9.106  ;
+; IDE[1]     ; E[9]        ; 8.724  ;    ;    ; 8.724  ;
+; IDE[1]     ; E[10]       ; 9.107  ;    ;    ; 9.107  ;
+; IDE[1]     ; E[11]       ; 9.114  ;    ;    ; 9.114  ;
+; IDE[1]     ; E[12]       ; 9.107  ;    ;    ; 9.107  ;
+; IDE[1]     ; E[13]       ; 9.114  ;    ;    ; 9.114  ;
+; IDE[1]     ; E[14]       ; 13.120 ;    ;    ; 13.120 ;
+; IDE[1]     ; E[15]       ; 9.026  ;    ;    ; 9.026  ;
+; IDE[1]     ; E[16]       ; 15.332 ;    ;    ; 15.332 ;
+; IDE[1]     ; E[17]       ; 15.131 ;    ;    ; 15.131 ;
+; IDE[1]     ; E[18]       ; 13.147 ;    ;    ; 13.147 ;
+; IDE[1]     ; E[19]       ; 14.566 ;    ;    ; 14.566 ;
+; IDE[1]     ; E[20]       ; 11.507 ;    ;    ; 11.507 ;
+; IDE[1]     ; E[21]       ; 15.654 ;    ;    ; 15.654 ;
+; IDE[1]     ; E[22]       ; 15.133 ;    ;    ; 15.133 ;
+; IDE[1]     ; E[23]       ; 15.136 ;    ;    ; 15.136 ;
+; IDE[1]     ; E[24]       ; 13.684 ;    ;    ; 13.684 ;
+; IDE[1]     ; E[25]       ; 13.683 ;    ;    ; 13.683 ;
+; IDE[1]     ; E[26]       ; 14.038 ;    ;    ; 14.038 ;
+; IDE[1]     ; E[27]       ; 9.826  ;    ;    ; 9.826  ;
+; IDE[1]     ; E[28]       ; 8.723  ;    ;    ; 8.723  ;
+; IDE[1]     ; E[29]       ; 11.298 ;    ;    ; 11.298 ;
+; IDE[1]     ; E[30]       ; 10.059 ;    ;    ; 10.059 ;
+; IDE[1]     ; E[31]       ; 11.392 ;    ;    ; 11.392 ;
+; IDE[2]     ; E[0]        ; 14.276 ;    ;    ; 14.276 ;
+; IDE[2]     ; E[1]        ; 11.515 ;    ;    ; 11.515 ;
+; IDE[2]     ; E[2]        ; 15.726 ;    ;    ; 15.726 ;
+; IDE[2]     ; E[3]        ; 12.360 ;    ;    ; 12.360 ;
+; IDE[2]     ; E[4]        ; 13.085 ;    ;    ; 13.085 ;
+; IDE[2]     ; E[5]        ; 12.827 ;    ;    ; 12.827 ;
+; IDE[2]     ; E[6]        ; 12.811 ;    ;    ; 12.811 ;
+; IDE[2]     ; E[7]        ; 15.800 ;    ;    ; 15.800 ;
+; IDE[2]     ; E[8]        ; 10.147 ;    ;    ; 10.147 ;
+; IDE[2]     ; E[9]        ; 9.765  ;    ;    ; 9.765  ;
+; IDE[2]     ; E[10]       ; 10.148 ;    ;    ; 10.148 ;
+; IDE[2]     ; E[11]       ; 10.155 ;    ;    ; 10.155 ;
+; IDE[2]     ; E[12]       ; 10.148 ;    ;    ; 10.148 ;
+; IDE[2]     ; E[13]       ; 10.155 ;    ;    ; 10.155 ;
+; IDE[2]     ; E[14]       ; 14.162 ;    ;    ; 14.162 ;
+; IDE[2]     ; E[15]       ; 10.068 ;    ;    ; 10.068 ;
+; IDE[2]     ; E[16]       ; 16.373 ;    ;    ; 16.373 ;
+; IDE[2]     ; E[17]       ; 16.172 ;    ;    ; 16.172 ;
+; IDE[2]     ; E[18]       ; 14.189 ;    ;    ; 14.189 ;
+; IDE[2]     ; E[19]       ; 15.608 ;    ;    ; 15.608 ;
+; IDE[2]     ; E[20]       ; 12.548 ;    ;    ; 12.548 ;
+; IDE[2]     ; E[21]       ; 16.695 ;    ;    ; 16.695 ;
+; IDE[2]     ; E[22]       ; 16.174 ;    ;    ; 16.174 ;
+; IDE[2]     ; E[23]       ; 16.177 ;    ;    ; 16.177 ;
+; IDE[2]     ; E[24]       ; 14.725 ;    ;    ; 14.725 ;
+; IDE[2]     ; E[25]       ; 14.724 ;    ;    ; 14.724 ;
+; IDE[2]     ; E[26]       ; 15.079 ;    ;    ; 15.079 ;
+; IDE[2]     ; E[27]       ; 10.867 ;    ;    ; 10.867 ;
+; IDE[2]     ; E[28]       ; 9.764  ;    ;    ; 9.764  ;
+; IDE[2]     ; E[29]       ; 12.339 ;    ;    ; 12.339 ;
+; IDE[2]     ; E[30]       ; 11.101 ;    ;    ; 11.101 ;
+; IDE[2]     ; E[31]       ; 12.434 ;    ;    ; 12.434 ;
+; IDF[0]     ; F[0]        ; 9.525  ;    ;    ; 9.525  ;
+; IDF[0]     ; F[1]        ; 10.027 ;    ;    ; 10.027 ;
+; IDF[0]     ; F[2]        ; 12.646 ;    ;    ; 12.646 ;
+; IDF[0]     ; F[3]        ; 9.426  ;    ;    ; 9.426  ;
+; IDF[0]     ; F[4]        ; 11.092 ;    ;    ; 11.092 ;
+; IDF[0]     ; F[5]        ; 11.303 ;    ;    ; 11.303 ;
+; IDF[0]     ; F[6]        ; 10.095 ;    ;    ; 10.095 ;
+; IDF[0]     ; F[7]        ; 11.601 ;    ;    ; 11.601 ;
+; IDF[0]     ; F[8]        ; 11.604 ;    ;    ; 11.604 ;
+; IDF[0]     ; F[9]        ; 11.599 ;    ;    ; 11.599 ;
+; IDF[0]     ; F[10]       ; 12.570 ;    ;    ; 12.570 ;
+; IDF[0]     ; F[11]       ; 12.917 ;    ;    ; 12.917 ;
+; IDF[0]     ; F[12]       ; 12.129 ;    ;    ; 12.129 ;
+; IDF[0]     ; F[13]       ; 11.267 ;    ;    ; 11.267 ;
+; IDF[0]     ; F[14]       ; 11.832 ;    ;    ; 11.832 ;
+; IDF[0]     ; F[15]       ; 12.551 ;    ;    ; 12.551 ;
+; IDF[0]     ; F[16]       ; 11.280 ;    ;    ; 11.280 ;
+; IDF[0]     ; F[17]       ; 10.921 ;    ;    ; 10.921 ;
+; IDF[0]     ; F[18]       ; 10.261 ;    ;    ; 10.261 ;
+; IDF[0]     ; F[19]       ; 10.016 ;    ;    ; 10.016 ;
+; IDF[0]     ; F[20]       ; 9.471  ;    ;    ; 9.471  ;
+; IDF[0]     ; F[21]       ; 9.758  ;    ;    ; 9.758  ;
+; IDF[0]     ; F[22]       ; 10.499 ;    ;    ; 10.499 ;
+; IDF[0]     ; F[23]       ; 10.025 ;    ;    ; 10.025 ;
+; IDF[0]     ; F[24]       ; 11.171 ;    ;    ; 11.171 ;
+; IDF[0]     ; F[25]       ; 10.712 ;    ;    ; 10.712 ;
+; IDF[0]     ; F[26]       ; 9.758  ;    ;    ; 9.758  ;
+; IDF[0]     ; F[27]       ; 9.747  ;    ;    ; 9.747  ;
+; IDF[0]     ; F[28]       ; 10.108 ;    ;    ; 10.108 ;
+; IDF[0]     ; F[29]       ; 9.471  ;    ;    ; 9.471  ;
+; IDF[0]     ; F[30]       ; 10.253 ;    ;    ; 10.253 ;
+; IDF[0]     ; F[31]       ; 11.297 ;    ;    ; 11.297 ;
+; IDF[1]     ; F[0]        ; 11.042 ;    ;    ; 11.042 ;
+; IDF[1]     ; F[1]        ; 11.544 ;    ;    ; 11.544 ;
+; IDF[1]     ; F[2]        ; 14.327 ;    ;    ; 14.327 ;
+; IDF[1]     ; F[3]        ; 10.943 ;    ;    ; 10.943 ;
+; IDF[1]     ; F[4]        ; 12.820 ;    ;    ; 12.820 ;
+; IDF[1]     ; F[5]        ; 12.683 ;    ;    ; 12.683 ;
+; IDF[1]     ; F[6]        ; 11.472 ;    ;    ; 11.472 ;
+; IDF[1]     ; F[7]        ; 13.118 ;    ;    ; 13.118 ;
+; IDF[1]     ; F[8]        ; 13.121 ;    ;    ; 13.121 ;
+; IDF[1]     ; F[9]        ; 13.116 ;    ;    ; 13.116 ;
+; IDF[1]     ; F[10]       ; 14.087 ;    ;    ; 14.087 ;
+; IDF[1]     ; F[11]       ; 14.434 ;    ;    ; 14.434 ;
+; IDF[1]     ; F[12]       ; 13.646 ;    ;    ; 13.646 ;
+; IDF[1]     ; F[13]       ; 12.783 ;    ;    ; 12.783 ;
+; IDF[1]     ; F[14]       ; 13.349 ;    ;    ; 13.349 ;
+; IDF[1]     ; F[15]       ; 14.068 ;    ;    ; 14.068 ;
+; IDF[1]     ; F[16]       ; 12.797 ;    ;    ; 12.797 ;
+; IDF[1]     ; F[17]       ; 12.437 ;    ;    ; 12.437 ;
+; IDF[1]     ; F[18]       ; 11.778 ;    ;    ; 11.778 ;
+; IDF[1]     ; F[19]       ; 11.533 ;    ;    ; 11.533 ;
+; IDF[1]     ; F[20]       ; 10.988 ;    ;    ; 10.988 ;
+; IDF[1]     ; F[21]       ; 11.275 ;    ;    ; 11.275 ;
+; IDF[1]     ; F[22]       ; 12.016 ;    ;    ; 12.016 ;
+; IDF[1]     ; F[23]       ; 11.542 ;    ;    ; 11.542 ;
+; IDF[1]     ; F[24]       ; 12.688 ;    ;    ; 12.688 ;
+; IDF[1]     ; F[25]       ; 12.229 ;    ;    ; 12.229 ;
+; IDF[1]     ; F[26]       ; 11.275 ;    ;    ; 11.275 ;
+; IDF[1]     ; F[27]       ; 11.264 ;    ;    ; 11.264 ;
+; IDF[1]     ; F[28]       ; 11.625 ;    ;    ; 11.625 ;
+; IDF[1]     ; F[29]       ; 10.988 ;    ;    ; 10.988 ;
+; IDF[1]     ; F[30]       ; 11.770 ;    ;    ; 11.770 ;
+; IDF[1]     ; F[31]       ; 12.814 ;    ;    ; 12.814 ;
+; IDF[2]     ; F[0]        ; 9.402  ;    ;    ; 9.402  ;
+; IDF[2]     ; F[1]        ; 9.904  ;    ;    ; 9.904  ;
+; IDF[2]     ; F[2]        ; 12.530 ;    ;    ; 12.530 ;
+; IDF[2]     ; F[3]        ; 9.303  ;    ;    ; 9.303  ;
+; IDF[2]     ; F[4]        ; 11.061 ;    ;    ; 11.061 ;
+; IDF[2]     ; F[5]        ; 11.040 ;    ;    ; 11.040 ;
+; IDF[2]     ; F[6]        ; 9.829  ;    ;    ; 9.829  ;
+; IDF[2]     ; F[7]        ; 11.478 ;    ;    ; 11.478 ;
+; IDF[2]     ; F[8]        ; 11.481 ;    ;    ; 11.481 ;
+; IDF[2]     ; F[9]        ; 11.476 ;    ;    ; 11.476 ;
+; IDF[2]     ; F[10]       ; 12.447 ;    ;    ; 12.447 ;
+; IDF[2]     ; F[11]       ; 12.794 ;    ;    ; 12.794 ;
+; IDF[2]     ; F[12]       ; 12.006 ;    ;    ; 12.006 ;
+; IDF[2]     ; F[13]       ; 11.143 ;    ;    ; 11.143 ;
+; IDF[2]     ; F[14]       ; 11.706 ;    ;    ; 11.706 ;
+; IDF[2]     ; F[15]       ; 12.425 ;    ;    ; 12.425 ;
+; IDF[2]     ; F[16]       ; 11.157 ;    ;    ; 11.157 ;
+; IDF[2]     ; F[17]       ; 10.797 ;    ;    ; 10.797 ;
+; IDF[2]     ; F[18]       ; 10.135 ;    ;    ; 10.135 ;
+; IDF[2]     ; F[19]       ; 9.890  ;    ;    ; 9.890  ;
+; IDF[2]     ; F[20]       ; 9.348  ;    ;    ; 9.348  ;
+; IDF[2]     ; F[21]       ; 9.635  ;    ;    ; 9.635  ;
+; IDF[2]     ; F[22]       ; 10.376 ;    ;    ; 10.376 ;
+; IDF[2]     ; F[23]       ; 9.902  ;    ;    ; 9.902  ;
+; IDF[2]     ; F[24]       ; 11.048 ;    ;    ; 11.048 ;
+; IDF[2]     ; F[25]       ; 10.589 ;    ;    ; 10.589 ;
+; IDF[2]     ; F[26]       ; 9.635  ;    ;    ; 9.635  ;
+; IDF[2]     ; F[27]       ; 9.624  ;    ;    ; 9.624  ;
+; IDF[2]     ; F[28]       ; 9.985  ;    ;    ; 9.985  ;
+; IDF[2]     ; F[29]       ; 9.348  ;    ;    ; 9.348  ;
+; IDF[2]     ; F[30]       ; 10.127 ;    ;    ; 10.127 ;
+; IDF[2]     ; F[31]       ; 11.171 ;    ;    ; 11.171 ;
+; nADS       ; LAD[0]      ; 13.238 ;    ;    ; 13.238 ;
+; nADS       ; LAD[1]      ; 12.709 ;    ;    ; 12.709 ;
+; nADS       ; LAD[2]      ; 13.238 ;    ;    ; 13.238 ;
+; nADS       ; LAD[3]      ; 11.660 ;    ;    ; 11.660 ;
+; nADS       ; LAD[4]      ; 10.272 ;    ;    ; 10.272 ;
+; nADS       ; LAD[5]      ; 11.389 ;    ;    ; 11.389 ;
+; nADS       ; LAD[6]      ; 12.445 ;    ;    ; 12.445 ;
+; nADS       ; LAD[7]      ; 11.097 ;    ;    ; 11.097 ;
+; nADS       ; LAD[8]      ; 11.881 ;    ;    ; 11.881 ;
+; nADS       ; LAD[9]      ; 11.308 ;    ;    ; 11.308 ;
+; nADS       ; LAD[10]     ; 10.015 ;    ;    ; 10.015 ;
+; nADS       ; LAD[11]     ; 10.071 ;    ;    ; 10.071 ;
+; nADS       ; LAD[12]     ; 11.389 ;    ;    ; 11.389 ;
+; nADS       ; LAD[13]     ; 14.338 ;    ;    ; 14.338 ;
+; nADS       ; LAD[14]     ; 10.582 ;    ;    ; 10.582 ;
+; nADS       ; LAD[15]     ; 12.970 ;    ;    ; 12.970 ;
++------------+-------------+--------+----+----+--------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; LCLK       ; LCLK     ; 5341     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; LCLK       ; LCLK     ; 5341     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Recovery Transfers                                                ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; LCLK       ; LCLK     ; 4        ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Removal Transfers                                                 ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; LCLK       ; LCLK     ; 4        ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 47    ; 47   ;
+; Unconstrained Input Port Paths  ; 1193  ; 1193 ;
+; Unconstrained Output Ports      ; 115   ; 115  ;
+; Unconstrained Output Port Paths ; 336   ; 336  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II TimeQuest Timing Analyzer
+    Info: Version 10.1 Build 197 01/19/2011 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Apr 18 14:10:54 2017
+Info: Command: quartus_sta v1495usr_demo -c v1495usr_demo
+Info: qsta_default_script.tcl version: #4
+Critical Warning: Synopsys Design Constraints File file not found: 'v1495usr_demo.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info: Deriving Clocks
+    Info: create_clock -period 1.000 -name LCLK LCLK
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -4.645
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -4.645      -294.805 LCLK 
+Info: Worst-case hold slack is 0.633
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     0.633         0.000 LCLK 
+Info: Worst-case recovery slack is -1.159
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.159        -4.245 LCLK 
+Info: Worst-case removal slack is 1.918
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     1.918         0.000 LCLK 
+Info: Worst-case minimum pulse width slack is -1.155
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.155      -158.231 LCLK 
+Info: The selected device family is not supported by the report_metastability command.
+Info: Design is not fully constrained for setup requirements
+Info: Design is not fully constrained for hold requirements
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 207 megabytes
+    Info: Processing ended: Tue Apr 18 14:10:55 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

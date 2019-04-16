@@ -1,0 +1,75 @@
+-- ****************************************************************************
+-- Author:			Lukas Buetikofer
+-- Date:				21.4.2015
+-- Module:			EncodingComponent
+-- Description:	Takes a logic input signal and returns 
+--						one pulse (10ns) at faling edge and two pulses (10 ns each)
+--						 at rising edge.
+-- ----------------------------------------------------------------------------
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_arith.all;
+USE ieee.std_logic_unsigned.all;
+USE ieee.std_logic_misc.all;  -- Use OR_REDUCE function
+USE work.v1495pkg.all;
+
+ENTITY EncodingComponent IS
+   PORT( 
+		LCLK:			IN		std_logic;	-- ADC clock
+		SignalIN:	IN		std_logic;
+		SignalOUT:	OUT	std_logic
+	);
+END EncodingComponent ;
+
+
+ARCHITECTURE rtl OF EncodingComponent IS
+
+	-- local signals 
+	signal counter : integer range 0 to 5 := 0;
+	signal output : std_logic := '0';
+	signal SignalON : std_logic := '0';
+
+BEGIN
+	
+   --*************************************************
+   -- BUSY LOGIC
+   --*************************************************	
+	process (LCLK) begin
+		if LCLK'event and LCLK = '1' then
+
+		
+	-- 0 => 1 transition
+	-- only possible if signal is'nt already on 
+	if SignalIN = '1' and SignalON = '0' then
+		SignalON <= '1';
+		SignalOUT <= '1';
+	end if;
+	if SignalIN = '1' and SignalON = '1' then
+		SignalOUT <= '0';
+	end if;
+		
+	
+	-- 1 => 0 transition
+	-- only possible if signal is already on 
+	if SignalIN = '0' and SignalON = '1' then
+		SignalON <= '0';
+		SignalOUT <= '1';		
+		counter <= 1;
+	end if;
+	if counter = 1 then
+		SignalOUT <= '0';
+		counter <= 2;
+	elsif counter = 2 then
+		SignalOUT <= '1';
+		counter <= 3;
+	elsif counter = 3 then
+		SignalOUT <= '0';
+		counter <= 0;
+	end if;
+		
+		end if;
+	end process;
+	
+END rtl;
+

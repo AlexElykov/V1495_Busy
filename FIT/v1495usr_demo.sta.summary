@@ -1,0 +1,25 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'LCLK'
+Slack : -4.645
+TNS   : -294.805
+
+Type  : Hold 'LCLK'
+Slack : 0.633
+TNS   : 0.000
+
+Type  : Recovery 'LCLK'
+Slack : -1.159
+TNS   : -4.245
+
+Type  : Removal 'LCLK'
+Slack : 1.918
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'LCLK'
+Slack : -1.155
+TNS   : -158.231
+
+------------------------------------------------------------

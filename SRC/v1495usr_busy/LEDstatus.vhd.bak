@@ -1,0 +1,61 @@
+-- ****************************************************************************
+-- Author:			Lukas Buetikofer
+-- Date:				21.4.2015
+-- Module:			EncodingComponent
+-- Description:	Creates returns a NIM signal as long as one of the
+--						ADC boards is busy.
+-- ----------------------------------------------------------------------------
+
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_arith.all;
+USE ieee.std_logic_unsigned.all;
+USE ieee.std_logic_misc.all;  -- Use OR_REDUCE function
+
+USE work.v1495pkg.all;
+
+ENTITY LEDstatus IS
+   PORT( 
+		LCLK:		IN		std_logic;	-- ADC clock
+		BusyIN1 : IN		std_logic_vector(31 downto 0);
+		BusyIN2 : IN		std_logic_vector(31 downto 0); -- not used
+		BusyOUT : OUT	std_logic	
+	);
+	
+END LEDstatus ;
+
+
+ARCHITECTURE rtl OF LEDstatus IS
+
+	-- local signals 
+signal counter : std_logic_vector(31 downto 0) := (others => '0');
+signal green_led : std_logic := '0';
+
+
+	-- Component Declarations
+
+
+
+BEGIN
+	
+   --*************************************************
+   -- BUSY LOGIC
+   --*************************************************	
+	process (LCLK) begin
+		if LCLK'event and LCLK = '1' then
+
+			if BusyIN1 = "11111111111111111111111111111111" then -- LVDS Busy is active low signal
+				BusyOUT <= '0';
+			else
+				BusyOUT <= '1';
+			end if;
+
+		end if;
+	end process;
+	
+	
+
+   
+END rtl;
+

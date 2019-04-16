@@ -1,0 +1,58 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_arith.all;
+USE ieee.std_logic_unsigned.all;
+USE ieee.std_logic_misc.all;  -- Use OR_REDUCE function
+
+USE work.v1495pkg.all;
+
+ENTITY BusyLogicComponent IS
+   PORT( 
+		LCLK:		IN		std_logic;	-- ADC clock
+		BusyIN : IN		std_logic_vector(31 downto 0);
+		BusyOUT : OUT	std_logic	
+	);
+	
+END BusyLogicComponent ;
+
+
+ARCHITECTURE rtl OF BusyLogicComponent IS
+
+	-- local signals 
+
+
+	-- Component Declarations
+
+
+
+BEGIN
+	
+   --*************************************************
+   -- BUSY LOGIC
+   --*************************************************	
+	process (LCLK) begin
+		if LCLK'event and LCLK = '1' then
+
+			-- blinking LED
+			if counter < 100000000 then
+				counter <= counter + 1;
+			else
+				counter <= (others => '0');
+				green_led <= not green_led;
+			end if;
+			
+			--if A_DIN = X"FFFFFFFF" AND B_DIN = X"FFFFFFFF" then
+			if A_DIN = X"00000000" AND B_DIN = X"00000000" then
+				BUSY_OUT <= '0';
+				else
+					BUSY_OUT <= '1';
+				end if;
+
+		end if;
+	end process;
+	
+	
+
+   
+END rtl;
+
